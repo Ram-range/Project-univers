@@ -1,0 +1,287 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="id"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Sora:wght@400;600;700&amp;family=Hanken+Grotesk:wght@400;500;600&amp;family=JetBrains+Mono:wght@500&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            "colors": {
+                    "error": "#ffb4ab",
+                    "starlight-white": "#F8FAFC",
+                    "on-error-container": "#ffdad6",
+                    "stellar-gray": "#94A3B8",
+                    "on-primary-fixed-variant": "#40465a",
+                    "tertiary": "#eec200",
+                    "on-primary": "#2a3043",
+                    "secondary-fixed": "#eaddff",
+                    "on-secondary-fixed-variant": "#5a00c6",
+                    "on-surface": "#e0e3e5",
+                    "secondary-fixed-dim": "#d2bbff",
+                    "on-background": "#e0e3e5",
+                    "inverse-primary": "#585e73",
+                    "primary-fixed-dim": "#c0c6de",
+                    "surface-variant": "#323537",
+                    "on-surface-variant": "#c6c6cd",
+                    "on-primary-fixed": "#151b2d",
+                    "on-primary-container": "#72778d",
+                    "on-secondary-container": "#c9aeff",
+                    "tertiary-fixed-dim": "#eec200",
+                    "on-tertiary-fixed-variant": "#574500",
+                    "secondary-container": "#6001d1",
+                    "midnight-blue": "#0F172A",
+                    "surface-container-high": "#272a2c",
+                    "surface-tint": "#c0c6de",
+                    "primary-container": "#020617",
+                    "surface-container": "#1d2022",
+                    "tertiary-container": "#0a0600",
+                    "on-secondary-fixed": "#25005a",
+                    "surface-container-low": "#191c1e",
+                    "primary": "#c0c6de",
+                    "surface": "#101415",
+                    "on-error": "#690005",
+                    "nebula-purple": "#7C3AED",
+                    "surface-bright": "#363a3b",
+                    "on-secondary": "#3f008e",
+                    "surface-container-highest": "#323537",
+                    "surface-container-lowest": "#0b0f10",
+                    "error-container": "#93000a",
+                    "inverse-surface": "#e0e3e5",
+                    "surface-dim": "#101415",
+                    "void-black": "#020617",
+                    "background": "#101415",
+                    "on-tertiary-fixed": "#231b00",
+                    "tertiary-fixed": "#ffe083",
+                    "primary-fixed": "#dce1fb",
+                    "outline-variant": "#46464c",
+                    "on-tertiary": "#3c2f00",
+                    "inverse-on-surface": "#2d3133",
+                    "outline": "#909097",
+                    "secondary": "#d2bbff",
+                    "on-tertiary-container": "#917500",
+                    "pulsar-gold": "#FACC15"
+            },
+            "borderRadius": {
+                    "DEFAULT": "0.25rem",
+                    "lg": "0.5rem",
+                    "xl": "0.75rem",
+                    "full": "9999px"
+            },
+            "spacing": {
+                    "margin-desktop": "64px",
+                    "container-max": "1280px",
+                    "margin-mobile": "20px",
+                    "unit": "8px",
+                    "gutter": "24px"
+            },
+            "fontFamily": {
+                    "headline-lg": ["Sora"],
+                    "label-sm": ["JetBrains Mono"],
+                    "headline-lg-mobile": ["Sora"],
+                    "headline-md": ["Sora"],
+                    "body-lg": ["Hanken Grotesk"],
+                    "label-md": ["JetBrains Mono"],
+                    "body-md": ["Hanken Grotesk"],
+                    "display-lg": ["Sora"]
+            },
+            "fontSize": {
+                    "headline-lg": ["40px", {"lineHeight": "48px", "letterSpacing": "-0.01em", "fontWeight": "600"}],
+                    "label-sm": ["12px", {"lineHeight": "16px", "letterSpacing": "0.08em", "fontWeight": "500"}],
+                    "headline-lg-mobile": ["32px", {"lineHeight": "40px", "fontWeight": "600"}],
+                    "headline-md": ["24px", {"lineHeight": "32px", "fontWeight": "600"}],
+                    "body-lg": ["18px", {"lineHeight": "28px", "fontWeight": "400"}],
+                    "label-md": ["14px", {"lineHeight": "20px", "letterSpacing": "0.05em", "fontWeight": "500"}],
+                    "body-md": ["16px", {"lineHeight": "24px", "fontWeight": "400"}],
+                    "display-lg": ["64px", {"lineHeight": "72px", "letterSpacing": "-0.02em", "fontWeight": "700"}]
+            }
+          },
+        },
+      }
+    </script>
+<style>
+        body {
+            background-color: #020617;
+            color: #F8FAFC;
+            overflow-x: hidden;
+        }
+        .glass {
+            background: rgba(15, 23, 42, 0.6);
+            backdrop-filter: blur(12px);
+            border: 1px solid rgba(248, 250, 252, 0.1);
+        }
+        .nebula-glow {
+            filter: drop-shadow(0 0 15px rgba(124, 58, 237, 0.4));
+        }
+        .star-field {
+            background-image: radial-gradient(circle at 2px 2px, rgba(255,255,255,0.15) 1px, transparent 0);
+            background-size: 40px 40px;
+        }
+    </style>
+</head>
+<body class="font-body-md text-body-md selection:bg-pulsar-gold selection:text-void-black">
+<!-- TopNavBar -->
+<nav class="fixed top-0 w-full z-50 bg-surface/80 backdrop-blur-xl border-b border-starlight-white/10">
+<div class="flex justify-between items-center px-margin-desktop py-4 max-w-container-max mx-auto">
+<div class="font-headline-md text-headline-md text-starlight-white tracking-tight flex items-center gap-2">
+<span class="material-symbols-outlined text-pulsar-gold" data-icon="star">star</span>
+                Cosmos Explorer
+            </div>
+<div class="hidden md:flex items-center gap-8">
+<a class="text-starlight-white font-bold border-b-2 border-pulsar-gold pb-1 font-body-md text-body-md" href="#">Explore</a>
+<a class="text-stellar-gray hover:text-starlight-white transition-colors font-body-md text-body-md" href="#">Gallery</a>
+<a class="text-stellar-gray hover:text-starlight-white transition-colors font-body-md text-body-md" href="#">Community</a>
+<a class="text-stellar-gray hover:text-starlight-white transition-colors font-body-md text-body-md" href="#">Profile</a>
+</div>
+<button class="bg-pulsar-gold text-void-black px-6 py-2 rounded-full font-bold active:scale-95 transition-transform">
+                Join Now
+            </button>
+</div>
+</nav>
+<!-- Hero Section -->
+<section class="relative min-h-screen flex items-center pt-20 overflow-hidden">
+<div class="absolute inset-0 z-0">
+<img class="w-full h-full object-cover opacity-60" data-alt="A breathtaking, cinematic view of a deep space nebula with swirling clouds of cosmic dust in vibrant shades of violet, deep indigo, and electric blue. Tiny, brilliant white stars are scattered throughout the composition, creating a sense of infinite depth. The lighting is ethereal and luminescent, highlighting the intricate filaments of the gas clouds. The overall mood is awe-inspiring, majestic, and scientifically detailed, reflecting a professional astronomical observatory aesthetic." src="https://lh3.googleusercontent.com/aida-public/AB6AXuA1XtRjGhlJg5Tk7G_4Vs1Wa7HW_pCGB0s0RgWtmSk8AXNcwEJTUK36QqYp0oUBOASJU8Pb_1DSBivXQ98ZgNCN_8V-XoRIogZekjK8U4NcSckxAL43kyCMNTXNufkMtYeGA35Y3cjrBYsC3i_sQsTMkK8IIAMuFH1gRhfcwonICjc9p8C0GaDZqcukAdWx4aXQ0yYtpb_BNOYfJ18coUkefAMe3SFBnsJ98kV4XrTii6Dz6ZucP4VQO7XKIBMqW49LnE1xG0Cd65g"/>
+<div class="absolute inset-0 bg-gradient-to-b from-void-black/20 via-void-black/40 to-void-black"></div>
+</div>
+<div class="relative z-10 px-margin-desktop max-w-container-max mx-auto w-full">
+<div class="max-w-3xl">
+<span class="font-label-md text-label-md text-pulsar-gold uppercase tracking-[0.2em] mb-4 block">Edisi Penjelajahan 2024</span>
+<h1 class="font-display-lg text-display-lg text-starlight-white mb-6 leading-tight">
+                    Singkap Misteri <br/><span class="text-transparent bg-clip-text bg-gradient-to-r from-pulsar-gold to-nebula-purple">Alam Semesta</span>
+</h1>
+<p class="font-body-lg text-body-lg text-stellar-gray mb-10 max-w-xl">
+                    Bergabunglah dengan komunitas astronomi global dalam memetakan bintang-bintang, menemukan eksoplanet baru, dan memahami asal-usul kosmos kita melalui data observasi real-time.
+                </p>
+<div class="flex flex-wrap gap-4">
+<button class="bg-pulsar-gold text-void-black px-8 py-4 rounded-lg font-bold text-lg hover:shadow-[0_0_20px_rgba(250,204,21,0.4)] transition-all active:scale-95">
+                        Mulai Menjelajah
+                    </button>
+<button class="glass text-starlight-white px-8 py-4 rounded-lg font-bold text-lg hover:bg-white/10 transition-all border border-nebula-purple/30 active:scale-95">
+                        Pelajari Misi
+                    </button>
+</div>
+</div>
+</div>
+<!-- Floating HUD Element -->
+<div class="absolute right-margin-desktop bottom-24 hidden lg:block">
+<div class="glass p-6 rounded-xl w-64 nebula-glow">
+<div class="flex items-center gap-3 mb-4">
+<span class="material-symbols-outlined text-nebula-purple" data-icon="rocket_launch">rocket_launch</span>
+<span class="font-label-sm text-label-sm text-starlight-white">STATUS MISI</span>
+</div>
+<div class="space-y-3">
+<div class="h-1 bg-white/10 rounded-full overflow-hidden">
+<div class="h-full bg-nebula-purple w-3/4"></div>
+</div>
+<p class="text-xs text-stellar-gray">VOYAGER 1: 24.3 Miliar KM dari Bumi</p>
+</div>
+</div>
+</div>
+</section>
+<!-- Featured Discoveries (Bento Grid) -->
+<section class="py-24 px-margin-desktop max-w-container-max mx-auto star-field">
+<div class="mb-16 text-center">
+<h2 class="font-headline-lg text-headline-lg text-starlight-white mb-4">Penemuan Unggulan</h2>
+<p class="text-stellar-gray max-w-2xl mx-auto">Menjelajahi objek-objek paling menakjubkan yang baru saja tertangkap oleh teleskop luar angkasa tercanggih kita.</p>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+<!-- Large Card -->
+<div class="md:col-span-2 group relative overflow-hidden rounded-2xl glass aspect-video md:aspect-auto">
+<img class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110" data-alt="A highly detailed close-up of a vibrant, multicolored gas giant planet similar to Jupiter, featuring complex swirling storm systems and atmospheric bands. The planet is set against the deep, dark void of space, illuminated from the side to create dramatic highlights and deep shadows. The color palette includes rich ochre, deep crimson, and ethereal whites. The image is crisp and professional, resembling high-resolution space telescope photography with a scientific yet majestic feel." src="https://lh3.googleusercontent.com/aida-public/AB6AXuDOnSjHZtgJIBHOhku7ptizQ7_4qDg2EcDLA03zAYUqNCwmRwsqIZCUdVs1TKtXPtHmVRk2OdJ808HCgG62t7R6F8Ih14Q_HW5slcFz1l-9ouJVYjXUAUwFoXAP6-1ydVOyR7thEt8PWK0X2gwu8qgtPA0UFkYpvDmadL7KU8YQlkYdLTLVUxu-U57z5dflvB-PuSmDSm4uokptGAwACXkshoDjflqbH0f9RImh3RnsrtmcuilUJnWbPTsMUKtB2FAkYXzHlpawSw4"/>
+<div class="absolute inset-0 bg-gradient-to-t from-void-black via-transparent to-transparent opacity-80"></div>
+<div class="absolute bottom-0 left-0 p-8">
+<span class="inline-block px-3 py-1 rounded-full bg-nebula-purple/20 text-nebula-purple border border-nebula-purple/30 text-xs font-label-sm mb-4">EKSOPLANET</span>
+<h3 class="font-headline-md text-headline-md text-starlight-white mb-2">K2-18b: Dunia Air?</h3>
+<p class="text-stellar-gray max-w-md">Deteksi uap air di atmosfer planet yang berada di zona layak huni bintangnya.</p>
+</div>
+</div>
+<!-- Small Card 1 -->
+<div class="group relative overflow-hidden rounded-2xl glass">
+<img class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110" data-alt="A wide-field view of a spiral galaxy with billions of stars, glowing intensely at its core and trailing long, elegant arms of starlight and dark dust. The image captured in the deep void of space is presented in high contrast, with a palette of brilliant starlight white, deep cosmic blues, and subtle hints of magenta in star-forming regions. The lighting is cinematic, emphasizing the vast scale and scientific mystery of the galactic structure." src="https://lh3.googleusercontent.com/aida-public/AB6AXuDQ9oTS0-qwtSrpXEMEZdO2FkvtwhFMPKkMxsbQcrfGyuq9HAOa78cCC1_LyB4z8P9zOCn-BVHxvdJ1xvKOGSO_z97IF5Sx9yG7kaazfpKXrgZQZS2Lxij-efAVSPzLNz49Fa7svq-xQPphTBFjBDOmLyr9JY1ybiPEa0lpTBr7lRdS0wzOYlhNOGTr4IT9_COgoIzzvC0dolJrntd0QwYukJ7Ehe_NsHLTba9UZEanFGf6UGgcIMR7Lza5KLQKfnU8yqQren4w2eE"/>
+<div class="absolute inset-0 bg-gradient-to-t from-void-black to-transparent opacity-80"></div>
+<div class="absolute bottom-0 left-0 p-6">
+<span class="inline-block px-3 py-1 rounded-full bg-pulsar-gold/20 text-pulsar-gold border border-pulsar-gold/30 text-xs font-label-sm mb-3">GALAKSI</span>
+<h3 class="font-headline-md text-headline-md text-starlight-white mb-1">M51: Whirlpool</h3>
+<p class="text-stellar-gray text-sm">Struktur spiral yang sempurna tertangkap oleh Webb.</p>
+</div>
+</div>
+<!-- Small Card 2 -->
+<div class="group relative overflow-hidden rounded-2xl glass">
+<img class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110" data-alt="A dramatic and scientific visualization of a black hole's event horizon, surrounded by a brilliant, glowing accretion disk of superheated gas and light. The intense gravitational lensing effects warp the starlight around the dark center. The color palette is dominated by intense pulsar gold and deep, immersive blacks. The visual style is high-end, futuristic, and grounded in astrophysical precision, evoking a sense of immense power and cosmic mystery." src="https://lh3.googleusercontent.com/aida-public/AB6AXuA6Q-EKA_SuM7Qxnokdd4SpU4MtSWrtk5Usk8RAnmsBw4FnkTK-PUtFxLhD6L8LaWIEP52VOV9UIaWSeKbA8spwBLObltm32aH9G48ZqZ-4aLClyeYpC04Kc0eKe-CZQccO7I7DMhK__8mOL7-OifYVK5qNFAkx5xjVmxQeOwUmtVghrSJmVnUmXNEG_EunSexOabExXdaTyIHrVLnIQnIY89JLpJxZs9aoSX71R0fq96v7OB_nPbkf2amrRFZyc4iltM76xbXl0eg"/>
+<div class="absolute inset-0 bg-gradient-to-t from-void-black to-transparent opacity-80"></div>
+<div class="absolute bottom-0 left-0 p-6">
+<span class="inline-block px-3 py-1 rounded-full bg-nebula-purple/20 text-nebula-purple border border-nebula-purple/30 text-xs font-label-sm mb-3">SINGULARITAS</span>
+<h3 class="font-headline-md text-headline-md text-starlight-white mb-1">Sagittarius A*</h3>
+<p class="text-stellar-gray text-sm">Membedah jantung galaksi Bima Sakti kita sendiri.</p>
+</div>
+</div>
+<!-- Medium Card -->
+<div class="md:col-span-2 group relative overflow-hidden rounded-2xl glass min-h-[300px]">
+<div class="absolute inset-0 flex items-center justify-center bg-void-black/40 p-8 text-center z-10">
+<div>
+<h3 class="font-headline-lg text-headline-lg text-pulsar-gold mb-4">Ingin Menjadi Bagian Dari Penemuan Ini?</h3>
+<p class="text-starlight-white mb-8 max-w-lg mx-auto">Akses dataset publik dan gunakan alat analisis kami untuk menemukan anomali kosmik dari rumah Anda.</p>
+<button class="bg-starlight-white text-void-black px-8 py-3 rounded-full font-bold hover:scale-105 transition-transform">Pelajari Proyek Citizen Science</button>
+</div>
+</div>
+<div class="absolute inset-0 bg-[url('https://www.transparenttextures.com/patterns/stardust.png')] opacity-20"></div>
+</div>
+</div>
+</section>
+<!-- Live Sky Map Preview -->
+<section class="py-24 bg-void-black relative">
+<div class="px-margin-desktop max-w-container-max mx-auto grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
+<div>
+<span class="font-label-md text-label-md text-nebula-purple uppercase mb-4 block">Alat Observasi</span>
+<h2 class="font-headline-lg text-headline-lg text-starlight-white mb-6">Peta Langit Real-Time</h2>
+<p class="text-stellar-gray font-body-lg mb-8">
+                    Gunakan antarmuka interaktif kami untuk melihat apa yang ada di atas kepala Anda saat ini. Dari konstelasi kuno hingga satelit buatan manusia yang melintas.
+                </p>
+<ul class="space-y-4 mb-10">
+<li class="flex items-center gap-4 text-starlight-white">
+<span class="material-symbols-outlined text-pulsar-gold" data-icon="check_circle">check_circle</span>
+<span>Pelacakan 5,000+ Bintang Terang</span>
+</li>
+<li class="flex items-center gap-4 text-starlight-white">
+<span class="material-symbols-outlined text-pulsar-gold" data-icon="check_circle">check_circle</span>
+<span>Prediksi Lintasan Stasiun Luar Angkasa (ISS)</span>
+</li>
+<li class="flex items-center gap-4 text-starlight-white">
+<span class="material-symbols-outlined text-pulsar-gold" data-icon="check_circle">check_circle</span>
+<span>Peringatan Hujan Meteor Mendatang</span>
+</li>
+</ul>
+<button class="flex items-center gap-2 group text-pulsar-gold font-bold text-lg">
+                    Buka Peta Lengkap
+                    <span class="material-symbols-outlined group-hover:translate-x-2 transition-transform" data-icon="arrow_forward">arrow_forward</span>
+</button>
+</div>
+<div class="relative">
+<div class="glass aspect-square rounded-full flex items-center justify-center relative overflow-hidden border-2 border-nebula-purple/20 p-4">
+<!-- Placeholder for the actual map -->
+<div class="w-full h-full rounded-full bg-void-black border border-white/10 flex items-center justify-center relative">
+<img class="absolute inset-0 w-full h-full object-cover opacity-40 mix-blend-screen" data-alt="A stylized, professional celestial map showing intricate constellations and stellar grids on a deep midnight blue background. Subtle glowing lines connect key stars, and a faint, hazy Milky Way path stretches across the circular frame. The aesthetic is inspired by high-end astronomy software, utilizing a palette of starlight white, soft nebula purple, and deep void black. The lighting is soft and ambient, highlighting the technical precision and vastness of the mapped sky." src="https://lh3.googleusercontent.com/aida-public/AB6AXuD2RoPImglvAxtJcPjdJXqSKfEGzmifbApePh64Xdop4iIxjsOsYh1vRF5xA5nfdH40T-NqoSoEVkpceD_nc3rV7FzaoTA1cA262d6DwQbHO564YYN4o01_o_p7Tj7SzFqVL_PlqxUWoOGQ5gPSWYh9x0jce_KZJN5D0cjx019rAfykhKOUdEx0eJGokRBtaGxd1Cs5HNfzYyAE0zZZj8OB8mJSj3wtM9mqC-9FkocPVNktcQ0kzVEaFLei1IGtCHsK5b2WsCF3lTs"/>
+<div class="relative z-10 text-center">
+<span class="material-symbols-outlined text-pulsar-gold text-5xl mb-4 animate-pulse" data-icon="location_searching">location_searching</span>
+<p class="font-label-sm text-starlight-white">MENGHUBUNGKAN KE GPS...</p>
+</div>
+</div>
+<!-- Orbiting decoration -->
+<div class="absolute inset-0 border border-nebula-purple/10 rounded-full animate-[spin_20s_linear_infinite]"></div>
+<div class="absolute top-1/2 left-0 w-2 h-2 bg-pulsar-gold rounded-full -translate-x-1 shadow-[0_0_10px_#FACC15]"></div>
+</div>
+</div>
+</div>
+</section>
+<!-- Join the Mission (Newsletter/Signup) -->
+<section class="py-24 px-margin-desktop">
+<div class="max-w-4xl mx-auto glass rounded-3xl p-12 text-center border-t-2 border-pulsar-gold/30">
+<h2 class="font-headline-lg text-headline-lg text-starlight-white mb-6">Bergabunglah dalam Misi</h2>
+<p class="text-stellar-gray mb-10 text-lg">Dapatkan berita penemuan terbaru, jadwal peluncuran roket, dan panduan astronomi bulanan langsung di kotak masuk Anda.</p>
+<form class="flex flex-col md:flex-row gap-4 
