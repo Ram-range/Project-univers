@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html class="dark" lang="id">
+<head>
+  <meta charset="utf-8"/>
+  <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+  <title>Masuk | Cosmos Explorer</title>
+  <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+  <link href="https://fonts.googleapis.com/css2?family=Sora:wght@400;600;700&family=Hanken+Grotesk:wght@400;500;600&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet"/>
+  <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap" rel="stylesheet"/>
+  <script id="tailwind-config">
+    tailwind.config = {
+      darkMode: "class",
+      theme: {
+        extend: {
+          colors: {
+            error: "#ffb4ab", "starlight-white": "#F8FAFC", "on-error-container": "#ffdad6", "stellar-gray": "#94A3B8",
+            "on-primary-fixed-variant": "#40465a", tertiary: "#eec200", "on-primary": "#2a3043", "secondary-fixed": "#eaddff",
+            "on-secondary-fixed-variant": "#5a00c6", "on-surface": "#e0e3e5", "secondary-fixed-dim": "#d2bbff",
+            "on-background": "#e0e3e5", "inverse-primary": "#585e73", "primary-fixed-dim": "#c0c6de", "surface-variant": "#323537",
+            "on-surface-variant": "#c6c6cd", "on-primary-fixed": "#151b2d", "on-primary-container": "#72778d",
+            "on-secondary-container": "#c9aeff", "tertiary-fixed-dim": "#eec200", "on-tertiary-fixed-variant": "#574500",
+            "secondary-container": "#6001d1", "midnight-blue": "#0F172A", "surface-container-high": "#272a2c",
+            "surface-tint": "#c0c6de", "primary-container": "#020617", "surface-container": "#1d2022", "tertiary-container": "#0a0600",
+            "on-secondary-fixed": "#25005a", "surface-container-low": "#191c1e", primary: "#c0c6de", surface: "#101415",
+            "on-error": "#690005", "nebula-purple": "#7C3AED", "surface-bright": "#363a3b", "on-secondary": "#3f008e",
+            "surface-container-highest": "#323537", "surface-container-lowest": "#0b0f10", "error-container": "#93000a",
+            "inverse-surface": "#e0e3e5", "surface-dim": "#101415", "void-black": "#020617", background: "#101415",
+            "on-tertiary-fixed": "#231b00", "tertiary-fixed": "#ffe083", "primary-fixed": "#dce1fb", "outline-variant": "#46464c",
+            "on-tertiary": "#3c2f00", "inverse-on-surface": "#2d3133", outline: "#909097", secondary: "#d2bbff",
+            "on-tertiary-container": "#917500", "pulsar-gold": "#FACC15"
+          },
+          borderRadius: { DEFAULT: "0.25rem", lg: "0.5rem", xl: "0.75rem", full: "9999px" },
+          spacing: { "margin-desktop": "64px", "container-max": "1280px", "margin-mobile": "20px", unit: "8px", gutter: "24px" },
+          fontFamily: { "headline-lg": ["Sora"], "label-sm": ["JetBrains Mono"], "headline-lg-mobile": ["Sora"], "headline-md": ["Sora"], "body-lg": ["Hanken Grotesk"], "label-md": ["JetBrains Mono"], "body-md": ["Hanken Grotesk"], "display-lg": ["Sora"] },
+          fontSize: {
+            "headline-lg": ["40px", { lineHeight: "48px", letterSpacing: "-0.01em", fontWeight: "600" }],
+            "label-sm": ["12px", { lineHeight: "16px", letterSpacing: "0.08em", fontWeight: "500" }],
+            "headline-lg-mobile": ["32px", { lineHeight: "40px", fontWeight: "600" }],
+            "headline-md": ["24px", { lineHeight: "32px", fontWeight: "600" }],
+            "body-lg": ["18px", { lineHeight: "28px", fontWeight: "400" }],
+            "label-md": ["14px", { lineHeight: "20px", letterSpacing: "0.05em", fontWeight: "500" }],
+            "body-md": ["16px", { lineHeight: "24px", fontWeight: "400" }],
+            "display-lg": ["64px", { lineHeight: "72px", letterSpacing: "-0.02em", fontWeight: "700" }]
+          }
+        }
+      }
+    }
+  </script>
+  <style>
+    body { background-color: #020617; overflow: hidden; }
+    .glass-panel { background: rgba(15, 23, 42, 0.6); backdrop-filter: blur(24px); border: 1px solid rgba(248, 250, 252, 0.1); }
+    .input-glow:focus-within { border-bottom-color: #7C3AED; box-shadow: 0 4px 12px -4px rgba(124, 58, 237, 0.3); }
+    .star { position: absolute; background: white; border-radius: 50%; opacity: 0.5; animation: twinkle var(--duration) infinite ease-in-out; }
+    @keyframes twinkle { 0%, 100% { opacity: 0.3; transform: scale(1); } 50% { opacity: 1; transform: scale(1.2); } }
+    .nebula-bg { background: radial-gradient(circle at 20% 30%, rgba(124, 58, 237, 0.15) 0%, transparent 50%), radial-gradient(circle at 80% 70%, rgba(250, 204, 21, 0.05) 0%, transparent 50%); }
+  </style>
+</head>
+<body class="min-h-screen flex items-center justify-center font-body-md text-starlight-white selection:bg-nebula-purple/30">
+  <div class="fixed inset-0 z-0">
+    <img alt="Lunar Surface" class="w-full h-full object-cover opacity-40 mix-blend-screen grayscale" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBzUbb7iBVdQ6LBEWb4of2a6Z20T4BdjLlKGou-UmuSV3IJZ6lAjRhOMXBmL-dDZxfh9V6GBN6seL6Ys9rge2ZaQ-YZoijv_iNPbzLpeskpRoelFARUeE5YHakAVT0d25-Kui__nEclcJM8uQNh5gyJCU_XHyEUu-2ry8gE8JOy1R1tbyTmp1GgRGeKnE7IpBtyvE8elA09tnYXzKMYIZLyAppBLpebOPyoBLw7g49vs4Tfnq3Qwcj2l7H19TLKdRDlh6238XLTBto"/>
+    <div class="absolute inset-0 nebula-bg"></div>
+    <div id="star-field"></div>
+  </div>
+  <main class="relative z-10 w-full max-w-[480px] px-margin-mobile md:px-0">
+    <div class="glass-panel p-8 md:p-12 rounded-xl shadow-2xl transition-all duration-500 animate-in fade-in slide-in-from-bottom-8">
+      <header class="text-center mb-10">
+        <a href="index.html">
+          <div class="inline-flex items-center justify-center w-16 h-16 rounded-full bg-void-black border border-pulsar-gold/30 mb-6 group cursor-pointer overflow-hidden">
+            <span class="material-symbols-outlined text-[32px] text-pulsar-gold group-hover:scale-110 transition-transform duration-500">explore</span>
+          </div>
+        </a>
+        <h1 class="font-headline-md text-headline-md text-starlight-white tracking-tight mb-2">Cosmos Explorer</h1>
+        <p class="font-body-md text-stellar-gray">Gerbang Anda menuju pemahaman semesta.</p>
+      </header>
+      <form action="#" class="space-y-6" method="POST">
+        <div class="relative group">
+          <label class="block font-label-sm text-label-sm text-stellar-gray mb-2 uppercase tracking-widest" for="scientific_id">Scientific ID / Email</label>
+          <div class="flex items-center border-b border-starlight-white/20 pb-2 transition-all duration-300 input-glow">
+            <span class="material-symbols-outlined text-stellar-gray mr-3">id_card</span>
+            <input class="bg-transparent border-none focus:ring-0 w-full p-0 font-label-md text-label-md text-starlight-white placeholder:text-stellar-gray/40" id="scientific_id" name="id" placeholder="Contoh: user@cosmos.edu" required="" type="text"/>
+          </div>
+        </div>
+        <div class="relative group">
+          <div class="flex justify-between items-end mb-2">
+            <label class="block font-label-sm text-label-sm text-stellar-gray uppercase tracking-widest" for="password">Kata Sandi</label>
+            <a class="font-label-sm text-label-sm text-nebula-purple hover:text-pulsar-gold transition-colors duration-300" href="#">Lupa Sandi?</a>
+          </div>
+          <div class="flex items-center border-b border-starlight-white/20 pb-2 transition-all duration-300 input-glow">
+            <span class="material-symbols-outlined text-stellar-gray mr-3">lock</span>
+            <input class="bg-transparent border-none focus:ring-0 w-full p-0 font-label-md text-label-md text-starlight-white placeholder:text-stellar-gray/40" id="password" name="password" placeholder="Masukkan sandi Anda" required="" type="password"/>
+          </div>
+        </div>
+        <button class="w-full py-4 bg-pulsar-gold hover:bg-white text-midnight-blue font-bold rounded-lg transition-all duration-300 transform active:scale-95 shadow-[0_0_20px_rgba(250,204,21,0.2)]" type="submit">Masuk Sekarang</button>
+      </form>
+      <div class="relative my-10">
+        <div aria-hidden="true" class="absolute inset-0 flex items-center"><div class="w-full border-t border-starlight-white/10"></div></div>
+        <div class="relative flex justify-center text-label-sm uppercase"><span class="bg-[#0f172a] px-4 text-stellar-gray">Atau masuk dengan</span></div>
+      </div>
+      <div class="space-y-4">
+        <button class="w-full py-3 px-4 flex items-center justify-center space-x-3 glass-panel rounded-lg border border-starlight-white/10 hover:border-nebula-purple/50 transition-all duration-300 group">
+          <span class="material-symbols-outlined text-nebula-purple group-hover:animate-pulse">science</span>
+          <span class="font-label-md text-label-md">Scientific ID Institutional</span>
+        </button>
+      </div>
+      <footer class="mt-10 text-center">
+        <p class="font-body-md text-stellar-gray">Belum memiliki akun? <a class="text-pulsar-gold hover:text-starlight-white font-semibold underline underline-offset-4 transition-colors" href="daftar.html">Daftar Ekspedisi</a></p>
+      </footer>
+    </div>
+    <div class="mt-8 flex items-center justify-center space-x-2 text-stellar-gray/60 font-label-sm animate-pulse">
+      <span class="material-symbols-outlined text-[16px]">encrypted</span>
+      <span>Enkripsi Kuantum Aktif</span>
+    </div>
+  </main>
+  <script>
+    const starField = document.getElementById('star-field');
+    for (let i = 0; i < 150; i++) {
+      const star = document.createElement('div');
+      star.className = 'star';
+      const size = Math.random() * 2 + 'px';
+      star.style.width = size;
+      star.style.height = size;
+      star.style.left = Math.random() * 100 + '%';
+      star.style.top = Math.random() * 100 + '%';
+      star.style.setProperty('--duration', Math.random() * 3 + 2 + 's');
+      star.style.animationDelay = Math.random() * 5 + 's';
+      starField.appendChild(star);
+    }
+    document.querySelectorAll('input').forEach(input => {
+      input.addEventListener('focus', () => input.parentElement.classList.add('border-nebula-purple'));
+      input.addEventListener('blur', () => input.parentElement.classList.remove('border-nebula-purple'));
+    });
+  </script>
+</body>
+</html>
