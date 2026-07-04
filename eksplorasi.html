@@ -1,0 +1,194 @@
+<!DOCTYPE html>
+<html class="dark" lang="id">
+<head>
+  <meta charset="utf-8"/>
+  <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+  <title>Katalog Konten Kosmos | Cosmos Explorer</title>
+  <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+  <link href="https://fonts.googleapis.com/css2?family=Sora:wght@400;600;700&family=Hanken+Grotesk:wght@400;500&family=JetBrains+Mono:wght@500&family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap" rel="stylesheet"/>
+  <style>
+    .material-symbols-outlined { font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24; }
+    .nebula-glow:hover { box-shadow: 0 0 20px rgba(124, 58, 237, 0.4); }
+    .glass-card { background: rgba(15, 23, 42, 0.6); backdrop-filter: blur(12px); border: 1px solid rgba(248, 250, 252, 0.1); transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1); }
+    .glass-card:hover { border-color: rgba(248, 250, 252, 0.3); transform: translateY(-4px); }
+    .zoom-effect img { transition: transform 0.6s cubic-bezier(0.4, 0, 0.2, 1); }
+    .zoom-effect:hover img { transform: scale(1.1); }
+    body { background-color: #020617; background-image: radial-gradient(circle at 20% 30%, rgba(124, 58, 237, 0.05) 0%, transparent 40%), radial-gradient(circle at 80% 70%, rgba(250, 204, 21, 0.05) 0%, transparent 40%); }
+  </style>
+  <script id="tailwind-config">
+    tailwind.config = {
+      darkMode: "class",
+      theme: {
+        extend: {
+          colors: {
+            error: "#ffb4ab", "starlight-white": "#F8FAFC", "on-error-container": "#ffdad6", "stellar-gray": "#94A3B8",
+            tertiary: "#eec200", "on-primary": "#2a3043", "on-surface": "#e0e3e5", "on-background": "#e0e3e5",
+            "midnight-blue": "#0F172A", "primary-container": "#020617", "nebula-purple": "#7C3AED", "void-black": "#020617",
+            background: "#101415", secondary: "#d2bbff", "pulsar-gold": "#FACC15"
+          },
+          fontFamily: { "headline-lg": ["Sora"], "label-sm": ["JetBrains Mono"], "headline-md": ["Sora"], "body-lg": ["Hanken Grotesk"], "label-md": ["JetBrains Mono"], "body-md": ["Hanken Grotesk"], "display-lg": ["Sora"] },
+          fontSize: {
+            "headline-lg": ["40px", { lineHeight: "48px", letterSpacing: "-0.01em", fontWeight: "600" }],
+            "label-sm": ["12px", { lineHeight: "16px", letterSpacing: "0.08em", fontWeight: "500" }],
+            "headline-md": ["24px", { lineHeight: "32px", fontWeight: "600" }],
+            "body-lg": ["18px", { lineHeight: "28px", fontWeight: "400" }],
+            "label-md": ["14px", { lineHeight: "20px", letterSpacing: "0.05em", fontWeight: "500" }],
+            "body-md": ["16px", { lineHeight: "24px", fontWeight: "400" }],
+            "display-lg": ["64px", { lineHeight: "72px", letterSpacing: "-0.02em", fontWeight: "700" }]
+          },
+          spacing: { "margin-desktop": "64px", "container-max": "1280px", "margin-mobile": "20px", gutter: "24px" }
+        }
+      }
+    }
+  </script>
+</head>
+<body class="text-starlight-white font-body-md overflow-x-hidden">
+  <nav class="fixed top-0 w-full z-50 bg-surface/80 backdrop-blur-xl border-b border-starlight-white/10">
+    <div class="flex justify-between items-center px-6 md:px-margin-desktop py-4 max-w-container-max mx-auto">
+      <div class="flex items-center gap-2">
+        <span class="material-symbols-outlined text-pulsar-gold" style="font-variation-settings: 'FILL' 1;">rocket_launch</span>
+        <span class="font-headline-md text-headline-md text-starlight-white tracking-tight">Cosmos Explorer</span>
+      </div>
+      <div class="hidden md:flex items-center gap-8">
+        <a class="text-starlight-white font-bold border-b-2 border-pulsar-gold pb-1 font-body-md" href="eksplorasi.html">Explore</a>
+        <a class="text-stellar-gray hover:text-starlight-white transition-colors font-body-md" href="daftar.html">Gallery</a>
+        <a class="text-stellar-gray hover:text-starlight-white transition-colors font-body-md" href="profil.html">Community</a>
+        <a class="text-stellar-gray hover:text-starlight-white transition-colors font-body-md" href="profil.html">Profile</a>
+      </div>
+      <div class="flex items-center gap-4">
+        <a href="daftar.html"><button class="active:scale-95 transition-transform bg-pulsar-gold text-void-black px-6 py-2 rounded-full font-bold text-label-md">Join Now</button></a>
+        <button class="md:hidden text-starlight-white"><span class="material-symbols-outlined">menu</span></button>
+      </div>
+    </div>
+  </nav>
+
+  <main class="pt-32 pb-20 px-6 md:px-margin-desktop max-w-container-max mx-auto">
+    <header class="mb-16">
+      <h1 class="font-display-lg text-display-lg mb-4 text-starlight-white max-w-3xl leading-tight">Jelajahi Misteri Alam Semesta</h1>
+      <p class="font-body-lg text-body-lg text-stellar-gray max-w-2xl">Arsip komprehensif mengenai galaksi jauh, eksoplanet yang dapat dihuni, dan fenomena kosmik yang belum terpecahkan.</p>
+    </header>
+    <section class="mb-12 space-y-8">
+      <div class="flex flex-col md:flex-row gap-gutter">
+        <div class="relative flex-grow">
+          <span class="material-symbols-outlined absolute left-4 top-1/2 -translate-y-1/2 text-stellar-gray">search</span>
+          <input class="w-full bg-transparent border-b-2 border-starlight-white/20 focus:border-nebula-purple transition-all pl-12 py-4 font-label-md text-starlight-white outline-none" placeholder="Cari galaksi, bintang, atau nebula..." type="text"/>
+        </div>
+        <div class="flex gap-4 items-center">
+          <button class="flex items-center gap-2 glass-card px-6 py-4 rounded-xl text-label-md">Kategori <span class="material-symbols-outlined text-sm">expand_more</span></button>
+          <button class="flex items-center gap-2 glass-card px-6 py-4 rounded-xl text-label-md">Jarak <span class="material-symbols-outlined text-sm">expand_more</span></button>
+        </div>
+      </div>
+      <div class="flex flex-wrap gap-3">
+        <button class="px-5 py-1.5 rounded-full border border-nebula-purple/50 bg-nebula-purple/10 text-nebula-purple font-label-sm">Semua</button>
+        <button class="px-5 py-1.5 rounded-full border border-starlight-white/10 hover:border-nebula-purple/50 transition-all font-label-sm">Galaksi</button>
+        <button class="px-5 py-1.5 rounded-full border border-starlight-white/10 hover:border-nebula-purple/50 transition-all font-label-sm">Eksoplanet</button>
+        <button class="px-5 py-1.5 rounded-full border border-starlight-white/10 hover:border-nebula-purple/50 transition-all font-label-sm">Bintang</button>
+        <button class="px-5 py-1.5 rounded-full border border-starlight-white/10 hover:border-nebula-purple/50 transition-all font-label-sm">Nebula</button>
+        <button class="px-5 py-1.5 rounded-full border border-starlight-white/10 hover:border-nebula-purple/50 transition-all font-label-sm">Black Hole</button>
+      </div>
+    </section>
+
+    <div class="grid grid-cols-1 md:grid-cols-12 gap-gutter">
+      <article class="md:col-span-8 group zoom-effect glass-card rounded-2xl overflow-hidden nebula-glow">
+        <div class="relative aspect-video">
+          <img class="w-full h-full object-cover" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAfYCP2iaDKn-u_5vvByDlmprpGD0GC7mvlCoAfR3cTy0DavlaaKJrOXhUsj-g1psNWpMn0uvkbtaN_sGyYSc8Per_YsutUgAz3X8UycGvqJmgbj9yc8vi7E2PppJkIMqpG9nngxPqVba-t0Wp9LVIYsqTzaH-ySuBCQOHmxyLRNBOINJOI_xh5Y4kT3ZH0-epYOXxxaT7TPxWOS2W3pf0sDQLQvq3b0JAyg9fmRHDf2iwlmWY3INQLnWS5W7u2ZAOEOmOJ6zyxReM"/>
+          <div class="absolute inset-0 bg-gradient-to-t from-void-black via-transparent to-transparent"></div>
+          <div class="absolute top-6 left-6 flex gap-2"><span class="bg-pulsar-gold text-void-black px-3 py-1 rounded font-label-sm uppercase">Terpopuler</span><span class="bg-white/10 backdrop-blur-md px-3 py-1 rounded font-label-sm uppercase">Galaksi</span></div>
+        </div>
+        <div class="p-8">
+          <div class="flex justify-between items-start mb-4"><h2 class="font-headline-lg text-headline-lg group-hover:text-pulsar-gold transition-colors">Andromeda: Tetangga Terdekat Kita</h2><span class="font-label-md text-stellar-gray">2.537 Juta Tahun Cahaya</span></div>
+          <p class="text-stellar-gray font-body-md mb-6 max-w-2xl">Andromeda adalah galaksi spiral terdekat dengan Bimasakti. Penelitian terbaru menunjukkan bahwa galaksi ini sedang dalam jalur tabrakan dengan galaksi kita dalam beberapa miliar tahun ke depan.</p>
+          <div class="grid grid-cols-3 gap-8 border-t border-starlight-white/10 pt-6">
+            <div><span class="block text-stellar-gray font-label-sm uppercase mb-1">Massa</span><span class="font-label-md">1.231 Triliun M☉</span></div>
+            <div><span class="block text-stellar-gray font-label-sm uppercase mb-1">Diameter</span><span class="font-label-md">220,000 tc</span></div>
+            <div><span class="block text-stellar-gray font-label-sm uppercase mb-1">Klasifikasi</span><span class="font-label-md">SA(s)b</span></div>
+          </div>
+        </div>
+      </article>
+
+      <article class="md:col-span-4 group zoom-effect glass-card rounded-2xl overflow-hidden nebula-glow flex flex-col">
+        <div class="relative h-64">
+          <img class="w-full h-full object-cover" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCcB68BAhU6KDPg2RMiC0qXDVW_2fd-1XSUBBSjTqiF1GzWETaf7VRMaELfJbj5MjYNSMyalpM4MDn7ZFUyALGW0KEhTZW0KJrB3B93OZzbqfcpGG-wUukJHdrVCn272o3LcDzYhwCJdow7AKY8WR0V9iQRaQQ48Vhu2bIAcW3yI-zIWopBhpU_bcC9JZKEkBc-zio86AeQJfMSCyArQU7TNbv0j5hFL0nysmwIhlO3WX8oBOYzwcEtg3M6F4noUTqqplEAMtZYH8k"/>
+          <div class="absolute inset-0 bg-gradient-to-t from-void-black/80 to-transparent"></div>
+          <div class="absolute bottom-4 left-4"><span class="bg-white/10 backdrop-blur-md px-3 py-1 rounded font-label-sm uppercase">Bintang</span></div>
+        </div>
+        <div class="p-6 flex-grow">
+          <h3 class="font-headline-md text-headline-md mb-2 group-hover:text-pulsar-gold transition-colors">Betelgeuse</h3>
+          <p class="text-stellar-gray font-body-md text-sm mb-4">Supergiat merah yang diperkirakan akan menjadi supernova dalam waktu dekat secara astronomis.</p>
+          <div class="mt-auto space-y-2">
+            <div class="flex justify-between border-b border-starlight-white/5 pb-2"><span class="text-stellar-gray font-label-sm">Suhu</span><span class="font-label-sm">3,500 K</span></div>
+            <div class="flex justify-between"><span class="text-stellar-gray font-label-sm">Jarak</span><span class="font-label-sm">642.5 tc</span></div>
+          </div>
+        </div>
+      </article>
+
+      <article class="md:col-span-4 group zoom-effect glass-card rounded-2xl overflow-hidden nebula-glow">
+        <div class="relative h-48">
+          <img class="w-full h-full object-cover" src="https://lh3.googleusercontent.com/aida-public/AB6AXuB1XoGXnXWR_HWqKJZJtas_6g_MGRT57pFWiDmvX2B4X6wd9FGJ5D9xBL7gYjD7SMxradi_yY_DkppHF0nyIA0t3jvKUOoEcY6eH9ZT3SMZyi75VLBVvKFaK8NiJOA21tlJ1wjm4ClHRTMxlRoH2qmOgQAEwKYCWCWsjOYgtHeAU-IYtu0lPCMRhfhNS-LCP-z-nHstaj7N3oMeYQuCCEUg2l8kevsjng6e5NCoqeAdLe0Ud7Y7ozdpj6D0latFh0T3-sRMxCymsHM"/>
+          <div class="absolute bottom-4 left-4"><span class="bg-white/10 backdrop-blur-md px-3 py-1 rounded font-label-sm uppercase">Nebula</span></div>
+        </div>
+        <div class="p-6">
+          <h3 class="font-headline-md text-headline-md mb-2">Orion Nebula</h3>
+          <p class="text-stellar-gray font-body-md text-sm mb-4">Wilayah pembentuk bintang paling aktif di lingkungan galaksi kita.</p>
+          <button class="w-full py-2 border border-nebula-purple/30 rounded-lg font-label-sm hover:bg-nebula-purple/20 transition-all">Pelajari Lebih Lanjut</button>
+        </div>
+      </article>
+
+      <article class="md:col-span-4 group zoom-effect glass-card rounded-2xl overflow-hidden nebula-glow">
+        <div class="relative h-48">
+          <img class="w-full h-full object-cover" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDMR69jPju_NW3DMT3sVwVb-8QXsDXjTUrmyIiqU9Y7NricvBS0iVxxOnn_rIFb8MiyTKElb1Bvgkt_m_emSAtwADPZ2_octv_0nbJQ6e1n6fUV6vdh2x3ZJlCgt6GfpN0v6ep3lgd7u6VVSSjC9K3qZF5lHkqMQaGmKLvTVFhTv0YFl7RRRskqda-w-yaLIdvWVSDrhoR54qe6GKE6Xkwt1Wtunc_b0vU2NH0zXlVTFJkH3sVfo9tByCCKS2IwuQm4BMpMf6qRiC4"/>
+          <div class="absolute bottom-4 left-4"><span class="bg-white/10 backdrop-blur-md px-3 py-1 rounded font-label-sm uppercase">Eksoplanet</span></div>
+        </div>
+        <div class="p-6">
+          <h3 class="font-headline-md text-headline-md mb-2">Kepler-186f</h3>
+          <p class="text-stellar-gray font-body-md text-sm mb-4">Eksoplanet pertama seukuran Bumi yang ditemukan di zona laik huni.</p>
+          <button class="w-full py-2 border border-nebula-purple/30 rounded-lg font-label-sm hover:bg-nebula-purple/20 transition-all">Lihat Dataset</button>
+        </div>
+      </article>
+
+      <article class="md:col-span-4 group zoom-effect glass-card rounded-2xl overflow-hidden nebula-glow">
+        <div class="relative h-48">
+          <img class="w-full h-full object-cover" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBov9jG7ky0UVn9M8KOKlnA87_7HjXIaB4690Fgg9_3m9DTVHCvWAWeBCqn_E-mecmNPZ_5FEeaTTw9O9uzgmYPLKua3t5nde_gq86NnndZX_OETGoc11iVNCv2Bfr6OiwIIYk1FbMWADc3qS2OR5mXAGrXNmPcB7hhyFzaiYpgfYE_PvvvI78p2LabqFHUZJU9EC_CQM7WyYIuxmqaJeEKfpqIqwCj8hxh0pRpKlBl80x0_TspsM1yCh-5uvz45fzEzvXpmLsPybU"/>
+          <div class="absolute bottom-4 left-4"><span class="bg-white/10 backdrop-blur-md px-3 py-1 rounded font-label-sm uppercase">Fenomena</span></div>
+        </div>
+        <div class="p-6">
+          <h3 class="font-headline-md text-headline-md mb-2">Sagittarius A*</h3>
+          <p class="text-stellar-gray font-body-md text-sm mb-4">Lubang hitam supermasif yang berada di pusat galaksi Bimasakti kita.</p>
+          <button class="w-full py-2 border border-nebula-purple/30 rounded-lg font-label-sm hover:bg-nebula-purple/20 transition-all">Analisis Data</button>
+        </div>
+      </article>
+    </div>
+
+    <div class="mt-16 flex justify-center items-center gap-4">
+      <button class="w-12 h-12 flex items-center justify-center rounded-full glass-card hover:border-pulsar-gold group"><span class="material-symbols-outlined group-hover:text-pulsar-gold">chevron_left</span></button>
+      <span class="font-label-md">Halaman 1 dari 42</span>
+      <button class="w-12 h-12 flex items-center justify-center rounded-full glass-card hover:border-pulsar-gold group"><span class="material-symbols-outlined group-hover:text-pulsar-gold">chevron_right</span></button>
+    </div>
+  </main>
+
+  <footer class="bg-midnight-blue w-full py-16 border-t border-starlight-white/5">
+    <div class="grid grid-cols-1 md:grid-cols-3 gap-gutter px-6 md:px-margin-desktop max-w-container-max mx-auto">
+      <div class="space-y-4">
+        <div class="flex items-center gap-2"><span class="material-symbols-outlined text-pulsar-gold" style="font-variation-settings: 'FILL' 1;">rocket_launch</span><span class="font-headline-md text-headline-md text-starlight-white">Cosmos Explorer</span></div>
+        <p class="text-stellar-gray text-label-md max-w-xs">© 2024 Cosmos Explorer. Memajukan Pemahaman Manusia tentang Alam Semesta.</p>
+      </div>
+      <div><h4 class="font-headline-md text-starlight-white mb-6">Tautan Cepat</h4><div class="grid grid-cols-2 gap-4"><a class="text-stellar-gray hover:text-nebula-purple transition-colors font-label-md" href="daftar.html">Resources</a><a class="text-stellar-gray hover:text-nebula-purple transition-colors font-label-md" href="eksplorasi.html">Missions</a><a class="text-stellar-gray hover:text-nebula-purple transition-colors font-label-md" href="daftar.html">Newsletter</a><a class="text-stellar-gray hover:text-nebula-purple transition-colors font-label-md" href="profil.html">Privacy</a><a class="text-stellar-gray hover:text-nebula-purple transition-colors font-label-md" href="profil.html">Contact</a></div></div>
+      <div><h4 class="font-headline-md text-starlight-white mb-6">Berlangganan</h4><p class="text-stellar-gray text-label-md mb-4">Dapatkan update terbaru tentang penemuan luar angkasa langsung ke inbox Anda.</p><div class="flex gap-2"><input class="bg-white/5 border border-white/10 rounded-lg px-4 py-2 text-label-sm flex-grow focus:border-pulsar-gold outline-none" placeholder="Email Anda" type="email"/><button class="bg-pulsar-gold text-void-black px-4 py-2 rounded-lg font-bold text-label-sm">Kirim</button></div></div>
+    </div>
+  </footer>
+  <script>
+    document.querySelectorAll('.glass-card').forEach(card => {
+      card.addEventListener('mousemove', (e) => {
+        const rect = card.getBoundingClientRect();
+        const x = e.clientX - rect.left;
+        const y = e.clientY - rect.top;
+        card.style.setProperty('--mouse-x', `${x}px`);
+        card.style.setProperty('--mouse-y', `${y}px`);
+      });
+    });
+    const searchInput = document.querySelector('input[type="text"]');
+    searchInput.addEventListener('focus', () => { searchInput.parentElement.classList.add('scale-[1.01]'); });
+    searchInput.addEventListener('blur', () => { searchInput.parentElement.classList.remove('scale-[1.01]'); });
+  </script>
+</body>
+</html>
