@@ -1,0 +1,207 @@
+<!DOCTYPE html>
+<html class="dark" lang="id">
+<head>
+  <meta charset="utf-8"/>
+  <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+  <title>Cosmos Explorer | Profil Astronom</title>
+  <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+  <link href="https://fonts.googleapis.com/css2?family=Sora:wght@400;600;700&family=Hanken+Grotesk:wght@400;500;600&family=JetBrains+Mono:wght@500&display=swap" rel="stylesheet"/>
+  <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap" rel="stylesheet"/>
+  <style>
+    body { background-color: #020617; color: #F8FAFC; font-family: 'Hanken Grotesk', sans-serif; }
+    .glass-panel { background: rgba(15, 23, 42, 0.6); backdrop-filter: blur(12px); border: 1px solid rgba(248, 250, 252, 0.1); }
+    .nebula-glow:hover { box-shadow: 0 0 20px rgba(124, 58, 237, 0.3); border-color: rgba(124, 58, 237, 0.5); }
+    .material-symbols-outlined { font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24; }
+  </style>
+  <script id="tailwind-config">
+    tailwind.config = {
+      darkMode: "class",
+      theme: {
+        extend: {
+          colors: {
+            error: "#ffb4ab", "starlight-white": "#F8FAFC", "on-error-container": "#ffdad6", "stellar-gray": "#94A3B8",
+            "on-primary-fixed-variant": "#40465a", tertiary: "#eec200", "on-primary": "#2a3043", "secondary-fixed": "#eaddff",
+            "on-secondary-fixed-variant": "#5a00c6", "on-surface": "#e0e3e5", "secondary-fixed-dim": "#d2bbff",
+            "on-background": "#e0e3e5", "inverse-primary": "#585e73", "primary-fixed-dim": "#c0c6de", "surface-variant": "#323537",
+            "on-surface-variant": "#c6c6cd", "on-primary-fixed": "#151b2d", "on-primary-container": "#72778d",
+            "on-secondary-container": "#c9aeff", "tertiary-fixed-dim": "#eec200", "on-tertiary-fixed-variant": "#574500",
+            "secondary-container": "#6001d1", "midnight-blue": "#0F172A", "surface-container-high": "#272a2c",
+            "surface-tint": "#c0c6de", "primary-container": "#020617", "surface-container": "#1d2022", "tertiary-container": "#0a0600",
+            "on-secondary-fixed": "#25005a", "surface-container-low": "#191c1e", primary: "#c0c6de", surface: "#101415",
+            "on-error": "#690005", "nebula-purple": "#7C3AED", "surface-bright": "#363a3b", "on-secondary": "#3f008e",
+            "surface-container-highest": "#323537", "surface-container-lowest": "#0b0f10", "error-container": "#93000a",
+            "inverse-surface": "#e0e3e5", "surface-dim": "#101415", "void-black": "#020617", background: "#101415",
+            "on-tertiary-fixed": "#231b00", "tertiary-fixed": "#ffe083", "primary-fixed": "#dce1fb", "outline-variant": "#46464c",
+            "on-tertiary": "#3c2f00", "inverse-on-surface": "#2d3133", outline: "#909097", secondary: "#d2bbff",
+            "on-tertiary-container": "#917500", "pulsar-gold": "#FACC15"
+          },
+          borderRadius: { DEFAULT: "0.25rem", lg: "0.5rem", xl: "0.75rem", full: "9999px" },
+          spacing: { "margin-desktop": "64px", "container-max": "1280px", "margin-mobile": "20px", unit: "8px", gutter: "24px" },
+          fontFamily: { "headline-lg": ["Sora"], "label-sm": ["JetBrains Mono"], "headline-lg-mobile": ["Sora"], "headline-md": ["Sora"], "body-lg": ["Hanken Grotesk"], "label-md": ["JetBrains Mono"], "body-md": ["Hanken Grotesk"], "display-lg": ["Sora"] },
+          fontSize: {
+            "headline-lg": ["40px", { lineHeight: "48px", letterSpacing: "-0.01em", fontWeight: "600" }],
+            "label-sm": ["12px", { lineHeight: "16px", letterSpacing: "0.08em", fontWeight: "500" }],
+            "headline-lg-mobile": ["32px", { lineHeight: "40px", fontWeight: "600" }],
+            "headline-md": ["24px", { lineHeight: "32px", fontWeight: "600" }],
+            "body-lg": ["18px", { lineHeight: "28px", fontWeight: "400" }],
+            "label-md": ["14px", { lineHeight: "20px", letterSpacing: "0.05em", fontWeight: "500" }],
+            "body-md": ["16px", { lineHeight: "24px", fontWeight: "400" }],
+            "display-lg": ["64px", { lineHeight: "72px", letterSpacing: "-0.02em", fontWeight: "700" }]
+          }
+        }
+      }
+    }
+  </script>
+</head>
+<body class="bg-void-black text-starlight-white min-h-screen pt-24 pb-12">
+  <nav class="fixed top-0 w-full z-50 bg-surface/80 backdrop-blur-xl border-b border-starlight-white/10">
+    <div class="flex justify-between items-center px-6 md:px-margin-desktop py-4 max-w-container-max mx-auto">
+      <a href="index.html" class="font-headline-md text-headline-md text-starlight-white tracking-tight">Cosmos Explorer</a>
+      <div class="hidden md:flex items-center space-x-8">
+        <a class="text-stellar-gray hover:text-starlight-white transition-colors font-body-md text-body-md" href="eksplorasi.html">Explore</a>
+        <a class="text-stellar-gray hover:text-starlight-white transition-colors font-body-md text-body-md" href="daftar.html">Gallery</a>
+        <a class="text-stellar-gray hover:text-starlight-white transition-colors font-body-md text-body-md" href="profil.html">Community</a>
+        <a class="text-starlight-white font-bold border-b-2 border-pulsar-gold pb-1 font-body-md text-body-md" href="profil.html">Profile</a>
+      </div>
+      <div class="flex items-center space-x-4">
+        <button class="material-symbols-outlined text-starlight-white p-2 hover:bg-white/5 rounded-full transition-all">search</button>
+        <a href="daftar.html"><button class="bg-pulsar-gold text-on-primary-fixed font-bold px-6 py-2 rounded-lg active:scale-95 transition-transform font-body-md">Join Now</button></a>
+      </div>
+    </div>
+  </nav>
+
+  <main class="max-w-container-max mx-auto px-6 md:px-margin-desktop">
+    <header class="grid grid-cols-1 md:grid-cols-12 gap-8 mb-12 items-center">
+      <div class="md:col-span-3 flex justify-center md:justify-start">
+        <div class="relative group">
+          <div class="absolute -inset-1 bg-gradient-to-r from-nebula-purple to-pulsar-gold rounded-full blur opacity-25 group-hover:opacity-50 transition duration-1000 group-hover:duration-200"></div>
+          <img alt="User Avatar" class="relative w-32 h-32 md:w-48 md:h-48 rounded-full border-2 border-starlight-white/10 object-cover" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBnJ4npGh8B8jrBet9WDrX6BS5ef0exrrNjZvKtXPWdzfQQrJLJqoKhpAXwZG7R6X6fpMO8wCszbt-eq5CETHl4_CmKomVtpgtf4W0h7hYJtyf4TVUc6cqEzw9ePU8mx-UkPjen2myQnXOW00gp8WzQThcztiDsVfhpQ6unLFiOp-1I-jniAR6O8FlYCZWBf1QORs9MYN1yYP1HbbHbDtpzKcSpTLuX67OWR31LkxeRzQbeWaHmIP0H9uvfM8xFj00wOX7zhQEllNQ"/>
+        </div>
+      </div>
+      <div class="md:col-span-6 text-center md:text-left">
+        <div class="flex flex-col md:flex-row md:items-center gap-2 md:gap-4 mb-2">
+          <h1 class="font-headline-lg text-headline-lg text-starlight-white">Dr. Aris Sudarsono</h1>
+          <span class="inline-flex items-center px-3 py-1 bg-nebula-purple/20 border border-nebula-purple/50 text-nebula-purple rounded-full text-label-sm font-label-sm">PROFESIONAL</span>
+        </div>
+        <p class="font-body-lg text-body-lg text-stellar-gray mb-6 max-w-xl">Astrofisikawan Independen &amp; Pemburu Exoplanet. Menghabiskan malam di bawah langit Lembang untuk memetakan rahasia kosmos.</p>
+        <div class="flex flex-wrap justify-center md:justify-start gap-4">
+          <button class="bg-pulsar-gold text-on-primary-fixed px-6 py-3 rounded-lg font-bold hover:brightness-110 transition-all font-body-md">Edit Profil</button>
+          <button class="glass-panel border border-nebula-purple text-starlight-white px-6 py-3 rounded-lg hover:bg-nebula-purple/10 transition-all font-body-md">Bagikan Portofolio</button>
+        </div>
+      </div>
+      <div class="md:col-span-3 flex flex-col items-center md:items-end gap-2">
+        <span class="font-label-md text-label-md text-stellar-gray uppercase tracking-widest">Stellar Rank</span>
+        <span class="font-display-lg text-display-lg text-pulsar-gold leading-none">NOVA V</span>
+        <span class="font-label-sm text-label-sm text-stellar-gray italic text-right">Top 2% Pengamat Global</span>
+      </div>
+    </header>
+
+    <section class="grid grid-cols-1 md:grid-cols-4 gap-gutter mb-16">
+      <div class="glass-panel p-8 rounded-xl flex flex-col justify-between nebula-glow transition-all duration-500">
+        <div class="flex justify-between items-start mb-4"><span class="material-symbols-outlined text-pulsar-gold">visibility</span><span class="text-label-sm font-label-sm text-stellar-gray">+12% Bulan Ini</span></div>
+        <div><span class="font-display-lg text-headline-lg text-starlight-white block">1,240</span><span class="font-label-md text-label-md text-stellar-gray uppercase">Jam Observasi</span></div>
+      </div>
+      <div class="glass-panel p-8 rounded-xl flex flex-col justify-between nebula-glow transition-all duration-500">
+        <div class="flex justify-between items-start mb-4"><span class="material-symbols-outlined text-nebula-purple">filter_drama</span><span class="text-label-sm font-label-sm text-stellar-gray">98 Koleksi</span></div>
+        <div><span class="font-display-lg text-headline-lg text-starlight-white block">42</span><span class="font-label-md text-label-md text-stellar-gray uppercase">Nebula Tersimpan</span></div>
+      </div>
+      <div class="glass-panel p-8 rounded-xl flex flex-col justify-between nebula-glow transition-all duration-500">
+        <div class="flex justify-between items-start mb-4"><span class="material-symbols-outlined text-pulsar-gold">workspace_premium</span><span class="text-label-sm font-label-sm text-stellar-gray">Level Ahli</span></div>
+        <div><span class="font-display-lg text-headline-lg text-starlight-white block">15</span><span class="font-label-md text-label-md text-stellar-gray uppercase">Mission Badges</span></div>
+      </div>
+      <div class="glass-panel p-8 rounded-xl flex flex-col justify-between nebula-glow transition-all duration-500">
+        <div class="flex justify-between items-start mb-4"><span class="material-symbols-outlined text-nebula-purple">public</span><span class="text-label-sm font-label-sm text-stellar-gray">6 Terverifikasi</span></div>
+        <div><span class="font-display-lg text-headline-lg text-starlight-white block">08</span><span class="font-label-md text-label-md text-stellar-gray uppercase">Exoplanet Ditemukan</span></div>
+      </div>
+    </section>
+
+    <div class="grid grid-cols-1 lg:grid-cols-12 gap-12">
+      <div class="lg:col-span-8">
+        <div class="flex justify-between items-end mb-8">
+          <div><h2 class="font-headline-md text-headline-md text-starlight-white">Galeri Observasi Terbaru</h2><p class="font-body-md text-body-md text-stellar-gray">Hasil tangkapan lensa teleskop pribadi dan kolaborasi.</p></div>
+          <button class="text-pulsar-gold font-label-md hover:underline">Lihat Semua</button>
+        </div>
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-gutter">
+          <div class="group relative rounded-xl overflow-hidden glass-panel border-starlight-white/5 transition-all duration-500 hover:scale-[1.02]">
+            <img alt="Orion Nebula" class="w-full aspect-square object-cover transition-transform duration-700 group-hover:scale-110" src="https://lh3.googleusercontent.com/aida-public/AB6AXuA03rUXZtU-4elgYze_2pCN__KozetU7gpWwwIeqCSQUiABklhlaHM5hm_IyXCC2XbEIekbbsJR_5FkOfnCqyXmsEsSGWMZYK7RlNqDYsR--QAyeNbJxDazOE7QmVODCYm_3qGDJaVg1fbffdeXXMEhixeu4A3rsiqJaYbxgrPjAOn0wWGHkVVopTqFvzDRoouEkv6gshJd2nqiE2i5Gai9rR1h8TnbJ8bygvfai_EBfXZDUVBdpT15P56_dO_tniAHsip8H5pYXQg"/>
+            <div class="absolute inset-0 bg-gradient-to-t from-void-black/90 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 p-6 flex flex-col justify-end">
+              <span class="font-label-sm text-label-sm text-pulsar-gold uppercase mb-1">Objek: M42 Orion</span>
+              <p class="font-headline-md text-headline-md text-starlight-white">The Great Nebula</p>
+              <div class="flex gap-2 mt-2"><span class="bg-white/10 px-2 py-1 rounded text-[10px] font-mono">ISO 1600</span><span class="bg-white/10 px-2 py-1 rounded text-[10px] font-mono">EXP 120s</span></div>
+            </div>
+          </div>
+          <div class="group relative rounded-xl overflow-hidden glass-panel border-starlight-white/5 transition-all duration-500 hover:scale-[1.02]">
+            <img alt="Galaxy Formation" class="w-full aspect-square object-cover transition-transform duration-700 group-hover:scale-110" src="https://lh3.googleusercontent.com/aida-public/AB6AXuD_s6eyKKr0N95iHsm7mlCEDK2DCfzZCDKZ_k-ynx_JM8Gtvz7pnexq56h3i1yrWEYey5ZS0PfmrpaVarXbc5P9WI6gdTDUhoK03_UedOGp7S1Fxu4Q1EKxFBvyO3u3lxenCjjYUvcBmNw05HiV-hhXQ8CB5y0PFUxz1f2oclewfsGTt5dfW49qPQSSHS59sW-1FBEaI2nyNT2Hu0BOOMWFCkpxITINSBNqEMqIkcTpZTB-LjMlidUrZKfBRzxPOX9ZhmcVBr4E4cA"/>
+            <div class="absolute inset-0 bg-gradient-to-t from-void-black/90 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 p-6 flex flex-col justify-end">
+              <span class="font-label-sm text-label-sm text-pulsar-gold uppercase mb-1">Objek: NGC 1300</span>
+              <p class="font-headline-md text-headline-md text-starlight-white">Barred Spiral Galaxy</p>
+              <div class="flex gap-2 mt-2"><span class="bg-white/10 px-2 py-1 rounded text-[10px] font-mono">ISO 3200</span><span class="bg-white/10 px-2 py-1 rounded text-[10px] font-mono">EXP 300s</span></div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="lg:col-span-4 space-y-gutter">
+        <div class="glass-panel p-8 rounded-xl">
+          <h3 class="font-headline-md text-headline-md text-starlight-white mb-6">Mission Badges</h3>
+          <div class="grid grid-cols-3 gap-4">
+            <div class="flex flex-col items-center gap-2 group cursor-help" title="First Moon Landing Observer">
+              <div class="w-16 h-16 rounded-full bg-surface-variant flex items-center justify-center border border-pulsar-gold/30 group-hover:bg-pulsar-gold/10 transition-colors"><span class="material-symbols-outlined text-pulsar-gold text-3xl">brightness_2</span></div>
+              <span class="font-label-sm text-[10px] text-stellar-gray text-center">Lunar Expert</span>
+            </div>
+            <div class="flex flex-col items-center gap-2 group cursor-help" title="Solar Storm Monitor">
+              <div class="w-16 h-16 rounded-full bg-surface-variant flex items-center justify-center border border-nebula-purple/30 group-hover:bg-nebula-purple/10 transition-colors"><span class="material-symbols-outlined text-nebula-purple text-3xl">wb_sunny</span></div>
+              <span class="font-label-sm text-[10px] text-stellar-gray text-center">Solar Flare</span>
+            </div>
+            <div class="flex flex-col items-center gap-2 group cursor-help" title="Deep Sky Navigator">
+              <div class="w-16 h-16 rounded-full bg-surface-variant flex items-center justify-center border border-starlight-white/20 group-hover:bg-white/10 transition-colors"><span class="material-symbols-outlined text-starlight-white text-3xl">explore</span></div>
+              <span class="font-label-sm text-[10px] text-stellar-gray text-center">Deep Sky</span>
+            </div>
+          </div>
+        </div>
+        <div class="glass-panel p-8 rounded-xl">
+          <h3 class="font-headline-md text-headline-md text-starlight-white mb-6">Aktivitas Terkini</h3>
+          <div class="space-y-6">
+            <div class="flex gap-4 items-start"><div class="w-2 h-2 rounded-full bg-pulsar-gold mt-2"></div><div><p class="font-body-md text-body-md text-starlight-white">Mengunggah foto baru: <span class="text-pulsar-gold italic">Andromeda Rising</span></p><span class="font-label-sm text-label-sm text-stellar-gray">2 jam yang lalu</span></div></div>
+            <div class="flex gap-4 items-start"><div class="w-2 h-2 rounded-full bg-nebula-purple mt-2"></div><div><p class="font-body-md text-body-md text-starlight-white">Menyelesaikan misi harian: <span class="text-nebula-purple italic">Identifikasi Pulsar</span></p><span class="font-label-sm text-label-sm text-stellar-gray">Kemarin</span></div></div>
+            <div class="flex gap-4 items-start"><div class="w-2 h-2 rounded-full bg-stellar-gray mt-2"></div><div><p class="font-body-md text-body-md text-starlight-white">Mengikuti: <span class="text-starlight-white font-bold">Observatorium Bosscha</span></p><span class="font-label-sm text-label-sm text-stellar-gray">3 hari yang lalu</span></div></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </main>
+
+  <footer class="mt-24 bg-midnight-blue border-t border-starlight-white/5 w-full py-16">
+    <div class="grid grid-cols-1 md:grid-cols-3 gap-gutter px-6 md:px-margin-desktop max-w-container-max mx-auto">
+      <div class="flex flex-col gap-4"><span class="font-headline-md text-headline-md text-starlight-white">Cosmos Explorer</span><p class="font-label-md text-label-md text-stellar-gray">© 2024 Cosmos Explorer. Memajukan Pemahaman Manusia tentang Semesta.</p></div>
+      <div class="grid grid-cols-2 gap-8">
+        <div class="flex flex-col gap-2"><h4 class="text-pulsar-gold font-bold mb-2">Tautan</h4><a class="text-stellar-gray hover:text-nebula-purple transition-colors font-label-md" href="eksplorasi.html">Misi</a><a class="text-stellar-gray hover:text-nebula-purple transition-colors font-label-md" href="daftar.html">Sumber Daya</a></div>
+        <div class="flex flex-col gap-2"><h4 class="text-pulsar-gold font-bold mb-2">Dukungan</h4><a class="text-stellar-gray hover:text-nebula-purple transition-colors font-label-md" href="profil.html">Kontak</a><a class="text-stellar-gray hover:text-nebula-purple transition-colors font-label-md" href="profil.html">Privasi</a></div>
+      </div>
+      <div class="flex flex-col gap-4">
+        <h4 class="text-pulsar-gold font-bold">Berlangganan Newsletter</h4>
+        <div class="flex border-b border-starlight-white/20 pb-2">
+          <input class="bg-transparent border-none focus:ring-0 text-starlight-white w-full font-label-md" placeholder="Email Anda" type="email"/>
+          <button class="material-symbols-outlined text-pulsar-gold">send</button>
+        </div>
+      </div>
+    </div>
+  </footer>
+  <script>
+    document.querySelectorAll('.glass-panel').forEach(card => {
+      card.addEventListener('mousemove', (e) => {
+        const rect = card.getBoundingClientRect();
+        const x = e.clientX - rect.left;
+        const y = e.clientY - rect.top;
+        const centerX = rect.width / 2;
+        const centerY = rect.height / 2;
+        const rotateX = (y - centerY) / 20;
+        const rotateY = (centerX - x) / 20;
+        card.style.transform = `perspective(1000px) rotateX(${rotateX}deg) rotateY(${rotateY}deg)`;
+      });
+      card.addEventListener('mouseleave', () => {
+        card.style.transform = `perspective(1000px) rotateX(0deg) rotateY(0deg)`;
+      });
+    });
+  </script>
+</body>
+</html>
