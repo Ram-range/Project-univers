@@ -1,0 +1,424 @@
+<!DOCTYPE html>
+<html class="dark" lang="id">
+<head>
+  <meta charset="utf-8"/>
+  <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+  <title>Perpustakaan Galaksi | Cosmos Explorer</title>
+  <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+  <link href="https://fonts.googleapis.com/css2?family=Sora:wght@100..800&amp;family=Hanken+Grotesk:ital,wght@0,100..900;1,100..900&amp;family=JetBrains+Mono:ital,wght@0,100..800;1,100..800&amp;display=swap" rel="stylesheet"/>
+  <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+  <script id="tailwind-config">
+    tailwind.config = {
+      darkMode: "class",
+      theme: {
+        extend: {
+          "colors": {
+            "tertiary-fixed": "#ffe083",
+            "surface-tint": "#c0c6de",
+            "on-secondary-fixed": "#25005a",
+            "on-error-container": "#ffdad6",
+            "on-surface-variant": "#c6c6cd",
+            "surface-bright": "#363a3b",
+            "primary-fixed": "#dce1fb",
+            "surface-dim": "#101415",
+            "on-background": "#e0e3e5",
+            "on-primary-container": "#72778d",
+            "secondary": "#d2bbff",
+            "primary": "#c0c6de",
+            "secondary-fixed": "#eaddff",
+            "tertiary-fixed-dim": "#eec200",
+            "on-secondary-container": "#c9aeff",
+            "on-tertiary-fixed-variant": "#574500",
+            "on-primary-fixed-variant": "#40465a",
+            "surface-container-highest": "#323537",
+            "inverse-surface": "#e0e3e5",
+            "surface-container-lowest": "#0b0f10",
+            "pulsar-gold": "#FACC15",
+            "midnight-blue": "#0F172A",
+            "primary-fixed-dim": "#c0c6de",
+            "on-tertiary": "#3c2f00",
+            "on-surface": "#e0e3e5",
+            "on-secondary-fixed-variant": "#5a00c6",
+            "on-error": "#690005",
+            "background": "#101415",
+            "secondary-fixed-dim": "#d2bbff",
+            "on-tertiary-container": "#917500",
+            "surface-container-low": "#191c1e",
+            "surface-container": "#1d2022",
+            "on-primary-fixed": "#151b2d",
+            "inverse-primary": "#585e73",
+            "tertiary-container": "#0a0600",
+            "surface-variant": "#323537",
+            "surface": "#101415",
+            "on-secondary": "#3f008e",
+            "tertiary": "#eec200",
+            "error-container": "#93000a",
+            "starlight-white": "#F8FAFC",
+            "error": "#ffb4ab",
+            "on-tertiary-fixed": "#231b00",
+            "inverse-on-surface": "#2d3133",
+            "nebula-purple": "#7C3AED",
+            "surface-container-high": "#272a2c",
+            "outline": "#909097",
+            "void-black": "#020617",
+            "on-primary": "#2a3043",
+            "outline-variant": "#46464c",
+            "stellar-gray": "#94A3B8",
+            "secondary-container": "#6001d1",
+            "primary-container": "#020617"
+          },
+          "borderRadius": {
+            "DEFAULT": "0.25rem",
+            "lg": "0.5rem",
+            "xl": "0.75rem",
+            "full": "9999px"
+          },
+          "spacing": {
+            "margin-mobile": "20px",
+            "gutter": "24px",
+            "unit": "8px",
+            "margin-desktop": "64px",
+            "container-max": "1280px"
+          },
+          "fontFamily": {
+            "label-sm": ["JetBrains Mono"],
+            "headline-md": ["Sora"],
+            "headline-lg-mobile": ["Sora"],
+            "body-lg": ["Hanken Grotesk"],
+            "headline-lg": ["Sora"],
+            "label-md": ["JetBrains Mono"],
+            "display-lg": ["Sora"],
+            "body-md": ["Hanken Grotesk"]
+          },
+          "fontSize": {
+            "label-sm": ["12px", {"lineHeight": "16px", "letterSpacing": "0.08em", "fontWeight": "500"}],
+            "headline-md": ["24px", {"lineHeight": "32px", "fontWeight": "600"}],
+            "headline-lg-mobile": ["32px", {"lineHeight": "40px", "fontWeight": "600"}],
+            "body-lg": ["18px", {"lineHeight": "28px", "fontWeight": "400"}],
+            "headline-lg": ["40px", {"lineHeight": "48px", "letterSpacing": "-0.01em", "fontWeight": "600"}],
+            "label-md": ["14px", {"lineHeight": "20px", "letterSpacing": "0.05em", "fontWeight": "500"}],
+            "display-lg": ["64px", {"lineHeight": "72px", "letterSpacing": "-0.02em", "fontWeight": "700"}],
+            "body-md": ["16px", {"lineHeight": "24px", "fontWeight": "400"}]
+          }
+        }
+      }
+    }
+  </script>
+  <style>
+    body {
+      background-color: #020617;
+      color: #F8FAFC;
+      overflow-x: hidden;
+    }
+    .glass-panel {
+      background: rgba(15, 23, 42, 0.6);
+      backdrop-filter: blur(12px);
+      border: 1px solid rgba(248, 250, 252, 0.1);
+    }
+    .nebula-glow {
+      box-shadow: 0 0 20px rgba(124, 58, 237, 0.2);
+    }
+    .nebula-glow:hover {
+      box-shadow: 0 0 30px rgba(124, 58, 237, 0.4);
+      border-color: rgba(124, 58, 237, 0.5);
+    }
+    .custom-scrollbar::-webkit-scrollbar {
+      width: 4px;
+    }
+    .custom-scrollbar::-webkit-scrollbar-track {
+      background: transparent;
+    }
+    .custom-scrollbar::-webkit-scrollbar-thumb {
+      background: #7C3AED;
+      border-radius: 10px;
+    }
+    .material-symbols-outlined {
+      font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+      vertical-align: middle;
+    }
+  </style>
+</head>
+<body class="font-body-md text-body-md selection:bg-nebula-purple/30 selection:text-pulsar-gold">
+
+  <!-- ===== NAVBAR ===== -->
+  <nav class="fixed top-0 w-full z-50 bg-surface/80 backdrop-blur-xl border-b border-starlight-white/10">
+    <div class="flex justify-between items-center px-margin-desktop py-4 max-w-container-max mx-auto">
+      <a href="index.html" class="font-headline-md text-headline-md text-starlight-white tracking-tight">Cosmos Explorer</a>
+      <div class="hidden md:flex items-center gap-8">
+        <a class="text-stellar-gray hover:text-starlight-white transition-colors font-body-md text-body-md" href="eksplorasi.html">Explore</a>
+        <a class="text-starlight-white font-bold border-b-2 border-pulsar-gold pb-1 font-body-md text-body-md" href="perpustakaan.html">Gallery</a>
+        <a class="text-stellar-gray hover:text-starlight-white transition-colors font-body-md text-body-md" href="profil.html">Community</a>
+        <a class="text-stellar-gray hover:text-starlight-white transition-colors font-body-md text-body-md" href="profil.html">Profile</a>
+      </div>
+      <div class="flex items-center gap-6">
+        <div class="relative hidden lg:block">
+          <input class="bg-white/5 border-b border-white/20 focus:border-nebula-purple outline-none px-4 py-1 text-label-md font-label-md w-48 transition-all focus:w-64" placeholder="Cari..." type="text"/>
+          <span class="material-symbols-outlined absolute right-2 top-1 text-stellar-gray text-sm">search</span>
+        </div>
+        <a href="daftar.html" id="joinBtn">
+          <button class="bg-pulsar-gold text-midnight-blue px-6 py-2 font-bold active:scale-95 transition-transform rounded-sm hover:opacity-90">Join Now</button>
+        </a>
+      </div>
+    </div>
+  </nav>
+
+  <!-- ===== SIDEBAR ===== -->
+  <aside class="fixed left-0 top-20 bottom-0 w-64 glass-panel border-r border-white/5 hidden md:flex flex-col p-6 z-40">
+    <h3 class="font-label-sm text-label-sm text-stellar-gray uppercase mb-6">Classifications</h3>
+    <ul class="space-y-4">
+      <li><a class="flex items-center gap-3 text-pulsar-gold font-bold" href="#"><span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">auto_awesome</span><span class="font-body-md">Galaxies</span></a></li>
+      <li><a class="flex items-center gap-3 text-stellar-gray hover:text-starlight-white transition-colors group" href="#"><span class="material-symbols-outlined group-hover:text-nebula-purple transition-colors">star</span><span class="font-body-md">Stars</span></a></li>
+      <li><a class="flex items-center gap-3 text-stellar-gray hover:text-starlight-white transition-colors group" href="#"><span class="material-symbols-outlined group-hover:text-nebula-purple transition-colors">public</span><span class="font-body-md">Planets</span></a></li>
+      <li><a class="flex items-center gap-3 text-stellar-gray hover:text-starlight-white transition-colors group" href="#"><span class="material-symbols-outlined group-hover:text-nebula-purple transition-colors">cloud</span><span class="font-body-md">Nebulae</span></a></li>
+      <li><a class="flex items-center gap-3 text-stellar-gray hover:text-starlight-white transition-colors group" href="#"><span class="material-symbols-outlined group-hover:text-nebula-purple transition-colors">brightness_low</span><span class="font-body-md">Black Holes</span></a></li>
+      <li><a class="flex items-center gap-3 text-stellar-gray hover:text-starlight-white transition-colors group" href="#"><span class="material-symbols-outlined group-hover:text-nebula-purple transition-colors">rocket_launch</span><span class="font-body-md">Missions</span></a></li>
+    </ul>
+    <div class="mt-auto pt-8 border-t border-white/5">
+      <div class="bg-nebula-purple/10 p-4 rounded-lg border border-nebula-purple/30">
+        <p class="text-label-sm font-label-sm text-nebula-purple mb-2">PRO ACCESS</p>
+        <p class="text-xs text-stellar-gray leading-tight">Unlock real-time high-resolution imagery from orbital observatories.</p>
+        <button class="w-full mt-4 bg-white/10 hover:bg-white/20 text-starlight-white py-2 text-xs font-bold transition-all uppercase tracking-widest">Upgrade</button>
+      </div>
+    </div>
+  </aside>
+
+  <!-- ===== MAIN CONTENT ===== -->
+  <main class="md:ml-64 pt-24 pb-16 px-6 md:px-margin-desktop min-h-screen">
+    <div class="max-w-container-max mx-auto space-y-16">
+
+      <!-- Featured Discovery Hero -->
+      <section class="relative h-[450px] rounded-2xl overflow-hidden glass-panel group nebula-glow transition-all duration-700">
+        <div class="absolute inset-0 bg-gradient-to-t from-midnight-blue via-midnight-blue/40 to-transparent"></div>
+        <div class="absolute inset-0 bg-[url('placeholder')] bg-cover bg-center mix-blend-overlay opacity-60 transition-transform duration-[20s] group-hover:scale-110"></div>
+        <div class="relative h-full flex flex-col justify-end p-8 md:p-12 max-w-3xl">
+          <div class="flex items-center gap-2 text-pulsar-gold mb-4">
+            <span class="material-symbols-outlined text-sm">verified</span>
+            <span class="font-label-sm text-label-sm tracking-[0.2em] uppercase">Featured Discovery</span>
+          </div>
+          <h1 class="font-display-lg text-4xl md:text-display-lg leading-tight text-starlight-white mb-6">Pillars of Creation: JWST Re-imagined</h1>
+          <p class="font-body-lg text-body-lg text-stellar-gray mb-8 line-clamp-2 md:line-clamp-none">Witness the eagle nebula in unprecedented detail, revealing nascent stars forming within dense clouds of interstellar gas and dust at 6,500 light-years from Earth.</p>
+          <div class="flex flex-wrap gap-4">
+            <button class="bg-pulsar-gold text-midnight-blue px-8 py-3 font-bold active:scale-95 transition-all">Explore Data</button>
+            <button class="bg-white/10 backdrop-blur hover:bg-white/20 text-white border border-nebula-purple/30 px-8 py-3 font-bold active:scale-95 transition-all">View Gallery</button>
+          </div>
+        </div>
+      </section>
+
+      <!-- Library Entries & Search -->
+      <section class="space-y-8">
+        <div class="space-y-6 border-b border-white/10 pb-6">
+          <div class="flex flex-col md:flex-row md:items-end justify-between gap-6">
+            <div>
+              <h2 class="font-headline-lg text-headline-lg text-starlight-white mb-2">Digital Library</h2>
+              <p class="text-stellar-gray font-body-md">Browse 24,812 verified celestial entries.</p>
+            </div>
+            <div class="flex flex-wrap items-center gap-4">
+              <div class="relative">
+                <label class="block text-[10px] text-stellar-gray uppercase tracking-widest mb-1 ml-1">Sort By</label>
+                <select class="appearance-none bg-midnight-blue border border-white/10 px-4 py-2 pr-10 text-label-md font-label-md text-starlight-white rounded-lg focus:border-pulsar-gold outline-none">
+                  <option>Most Recent</option>
+                  <option>A-Z Alphabetical</option>
+                  <option>Distance: Near to Far</option>
+                </select>
+                <span class="material-symbols-outlined absolute right-3 top-8 text-stellar-gray pointer-events-none">expand_more</span>
+              </div>
+              <div class="relative">
+                <label class="block text-[10px] text-stellar-gray uppercase tracking-widest mb-1 ml-1">Instrument</label>
+                <select class="appearance-none bg-midnight-blue border border-white/10 px-4 py-2 pr-10 text-label-md font-label-md text-starlight-white rounded-lg focus:border-pulsar-gold outline-none">
+                  <option>All Instruments</option>
+                  <option>JWST</option>
+                  <option>Hubble</option>
+                  <option>Kepler</option>
+                  <option>Chandra</option>
+                </select>
+                <span class="material-symbols-outlined absolute right-3 top-8 text-stellar-gray pointer-events-none">expand_more</span>
+              </div>
+              <div class="relative">
+                <label class="block text-[10px] text-stellar-gray uppercase tracking-widest mb-1 ml-1">Distance Range</label>
+                <select class="appearance-none bg-midnight-blue border border-white/10 px-4 py-2 pr-10 text-label-md font-label-md text-starlight-white rounded-lg focus:border-pulsar-gold outline-none">
+                  <option>All Distances</option>
+                  <option>&lt; 1k LY</option>
+                  <option>1k - 1M LY</option>
+                  <option>Deep Space</option>
+                </select>
+                <span class="material-symbols-outlined absolute right-3 top-8 text-stellar-gray pointer-events-none">expand_more</span>
+              </div>
+              <div class="flex items-center gap-3 bg-white/5 border border-white/10 px-4 py-2 rounded-lg h-[42px] mt-5">
+                <span class="text-label-md font-label-md text-starlight-white">Verified Only</span>
+                <div class="w-8 h-4 bg-nebula-purple rounded-full relative cursor-pointer">
+                  <div class="absolute right-1 top-1 w-2 h-2 bg-white rounded-full"></div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="flex flex-wrap gap-2">
+            <span class="px-3 py-1 bg-nebula-purple/20 border border-nebula-purple/30 rounded-full text-xs font-label-md text-nebula-purple cursor-pointer hover:bg-nebula-purple/30 transition-colors">Verified Data</span>
+            <span class="px-3 py-1 bg-white/5 border border-white/10 rounded-full text-xs font-label-md text-stellar-gray cursor-pointer hover:text-starlight-white hover:border-white/20 transition-colors">Pro Access</span>
+            <span class="px-3 py-1 bg-white/5 border border-white/10 rounded-full text-xs font-label-md text-stellar-gray cursor-pointer hover:text-starlight-white hover:border-white/20 transition-colors">New Discoveries</span>
+            <span class="px-3 py-1 bg-white/5 border border-white/10 rounded-full text-xs font-label-md text-stellar-gray cursor-pointer hover:text-starlight-white hover:border-white/20 transition-colors">High Resolution</span>
+          </div>
+        </div>
+
+        <!-- Info Cards Grid -->
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+          <!-- Card 1 -->
+          <div class="group glass-panel rounded-xl overflow-hidden hover:scale-[1.02] transition-all duration-300 nebula-glow">
+            <div class="h-48 overflow-hidden relative">
+              <img class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCjwMmXVD0w8pMV6nNoZLUfEhCr4pY53WRqUHlH_6r1o66XB99itlVv5JdzlnXxz3-1S8ZLyR30eShWE9OZjik99KOVP1DYaeo4nDilbuY43UKDytPm-xZbHiCIDC46MjZ_0n3Qlervmb3Q9BFd2RROJg50dSVmz6q-ZgDuhMdOxOcqvO-jxqhxFUVjMw2ZAVokTMnuShCawKr9lxdpwFtN0Gteg4AaaQQBlcTv42o8P-wpKiL39_2r"/>
+              <div class="absolute top-4 right-4 px-3 py-1 bg-midnight-blue/80 backdrop-blur rounded-full text-label-sm font-label-sm text-pulsar-gold border border-pulsar-gold/30">Black Hole</div>
+            </div>
+            <div class="p-6 space-y-4">
+              <h3 class="font-headline-md text-headline-md text-starlight-white">Sagittarius A*</h3>
+              <p class="text-stellar-gray text-sm line-clamp-3">The supermassive black hole at the center of our Milky Way galaxy, containing approximately 4.3 million solar masses.</p>
+              <div class="grid grid-cols-2 gap-4 py-4 border-y border-white/5">
+                <div><span class="block text-[10px] text-stellar-gray uppercase tracking-widest mb-1">Distance</span><span class="text-starlight-white font-label-md text-label-md">26,000 LY</span></div>
+                <div><span class="block text-[10px] text-stellar-gray uppercase tracking-widest mb-1">Classification</span><span class="text-starlight-white font-label-md text-label-md">SMBH</span></div>
+              </div>
+              <button class="w-full text-pulsar-gold text-label-md font-label-md group-hover:translate-x-1 transition-transform flex items-center justify-center gap-2">Review Archive <span class="material-symbols-outlined text-sm">arrow_forward</span></button>
+            </div>
+          </div>
+
+          <!-- Card 2 -->
+          <div class="group glass-panel rounded-xl overflow-hidden hover:scale-[1.02] transition-all duration-300 nebula-glow">
+            <div class="h-48 overflow-hidden relative">
+              <img class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAOK3kC9CBGOoD91bv29oM5tDmV-suO1xDQrXG5tW6uyTjypI-3rsArG9ZLOHgDBvo1_YTTfmmXFcyR1Yzh9HzGV98lTFu8u6lstHuqwDUdpvXErLR_SSg4-5OU4m6spTS9-b21v9zCMQnWcFnEKkCfwkd1txoZScbRZiR7dI0QIEF59X6vZ9GShnzR7wiNgLFMlY4fiYWo8fM0SE-M8LC7_xIAtUMSqtOqnmb0pBbhwd365Cg_oPUx"/>
+              <div class="absolute top-4 right-4 px-3 py-1 bg-midnight-blue/80 backdrop-blur rounded-full text-label-sm font-label-sm text-secondary border border-secondary/30">Galaxy</div>
+            </div>
+            <div class="p-6 space-y-4">
+              <h3 class="font-headline-md text-headline-md text-starlight-white">Andromeda (M31)</h3>
+              <p class="text-stellar-gray text-sm line-clamp-3">Our nearest major galactic neighbor, a massive spiral galaxy on a multi-billion year collision course with the Milky Way.</p>
+              <div class="grid grid-cols-2 gap-4 py-4 border-y border-white/5">
+                <div><span class="block text-[10px] text-stellar-gray uppercase tracking-widest mb-1">Distance</span><span class="text-starlight-white font-label-md text-label-md">2.537 M LY</span></div>
+                <div><span class="block text-[10px] text-stellar-gray uppercase tracking-widest mb-1">Classification</span><span class="text-starlight-white font-label-md text-label-md">Spiral</span></div>
+              </div>
+              <button class="w-full text-pulsar-gold text-label-md font-label-md group-hover:translate-x-1 transition-transform flex items-center justify-center gap-2">Review Archive <span class="material-symbols-outlined text-sm">arrow_forward</span></button>
+            </div>
+          </div>
+
+          <!-- Card 3 -->
+          <div class="group glass-panel rounded-xl overflow-hidden hover:scale-[1.02] transition-all duration-300 nebula-glow">
+            <div class="h-48 overflow-hidden relative">
+              <img class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110" src="https://lh3.googleusercontent.com/aida-public/AB6AXuB94WtfsreTvr7tSM6_141YJHH4pKQFn_kFFLpER1gHysAM47JTAoOawxb63rLRX3zv3x5k19ni-WTGeAl8Cq_C6w0xAVp2i0TU2naapVjWIesBKZf02pYrFd-xbpW_Cj7nGYFKpWXF-zCZHnaRJt2wF_hfmRPsz51lgTKffGmv9-q8IihkSeWC7jZehdkvPlDgnHliYtPqSzEVjkukxoEaJrrz2_2mNi44TUBTigeQBj0mBkgoZW1m"/>
+              <div class="absolute top-4 right-4 px-3 py-1 bg-midnight-blue/80 backdrop-blur rounded-full text-label-sm font-label-sm text-nebula-purple border border-nebula-purple/30">Nebula</div>
+            </div>
+            <div class="p-6 space-y-4">
+              <h3 class="font-headline-md text-headline-md text-starlight-white">The Helix Eye</h3>
+              <p class="text-stellar-gray text-sm line-clamp-3">A large planetary nebula formed by an intermediate to low-mass star, which sheds its outer layers near the end of its life.</p>
+              <div class="grid grid-cols-2 gap-4 py-4 border-y border-white/5">
+                <div><span class="block text-[10px] text-stellar-gray uppercase tracking-widest mb-1">Distance</span><span class="text-starlight-white font-label-md text-label-md">655 LY</span></div>
+                <div><span class="block text-[10px] text-stellar-gray uppercase tracking-widest mb-1">Classification</span><span class="text-starlight-white font-label-md text-label-md">Planetary</span></div>
+              </div>
+              <button class="w-full text-pulsar-gold text-label-md font-label-md group-hover:translate-x-1 transition-transform flex items-center justify-center gap-2">Review Archive <span class="material-symbols-outlined text-sm">arrow_forward</span></button>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Recent Archives Section -->
+      <section class="space-y-8 bg-surface-container-low/50 p-8 rounded-3xl border border-white/5">
+        <div class="flex items-center justify-between">
+          <h2 class="font-headline-md text-headline-md text-starlight-white flex items-center gap-3">
+            <span class="material-symbols-outlined text-nebula-purple">history</span>
+            Recent Archive Additions
+          </h2>
+          <a class="text-label-md font-label-md text-stellar-gray hover:text-pulsar-gold transition-colors" href="#">View All Stream</a>
+        </div>
+        <div class="space-y-4">
+          <!-- Archive Item 1 -->
+          <div class="flex items-center gap-6 p-4 glass-panel rounded-xl hover:bg-white/5 transition-all cursor-pointer group">
+            <div class="w-16 h-16 rounded-lg overflow-hidden flex-shrink-0">
+              <img class="w-full h-full object-cover" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAP-co4Hm0ga3A09Y37URHcQWOek6q-oLtBGj90b-qFoKTNuE5BpC-ZVVlnOqJ5qKLhxxqtTZhwBWgV6avFzi1LiCLTNzqKQugt8O37zOmo7LGXQ9cQvOanfPmKSWrLx4dxiPIgUw7C9D9sRzg9Lc21x6l582HYc25BU5TGg3Sms7Jqmb9c9XKafeCniqG2Oa_0mQzshQzv6LOkQCEbJTKIyqfprwsQCphsUxZOTM_Lapg2EuP8sJ6P"/>
+            </div>
+            <div class="flex-grow">
+              <div class="flex items-center gap-3 mb-1">
+                <span class="font-label-sm text-label-sm text-nebula-purple uppercase">New Imagery</span>
+                <span class="text-xs text-stellar-gray">• 2 hours ago</span>
+              </div>
+              <h4 class="text-starlight-white font-bold">Europa Surface Mapping High-Res</h4>
+            </div>
+            <div class="hidden md:flex flex-col items-end gap-1">
+              <span class="text-label-sm font-label-sm text-pulsar-gold">SOURCE: JUNO-02</span>
+              <span class="text-xs text-stellar-gray uppercase tracking-widest">Spectral Data</span>
+            </div>
+            <span class="material-symbols-outlined text-stellar-gray group-hover:text-starlight-white transition-colors">download</span>
+          </div>
+
+          <!-- Archive Item 2 -->
+          <div class="flex items-center gap-6 p-4 glass-panel rounded-xl hover:bg-white/5 transition-all cursor-pointer group">
+            <div class="w-16 h-16 rounded-lg overflow-hidden flex-shrink-0">
+              <img class="w-full h-full object-cover" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDooaHcNlcHkyRE3SeP2GBG00lgrbc0urP_1N6mgAMNwEJGqJvZjTVZ7gh1IMfb35lH6QCFrvcHiKQtMoKWvQ6IcVdJ7eXE_zoDkOrP8P9Jsw5HhERZJACu3aP6RoMxnSwTj_cwd4j-8kQljYe4tr8Xm7ogq4YrE_h1UMO-ybGWS4dgwTmNwif8ZjuxmntIwXhuuiv5h3bJGWJMopfbUOdHTiWCZ_IwEgH---0DV3PaCV7m4urQ63pl"/>
+            </div>
+            <div class="flex-grow">
+              <div class="flex items-center gap-3 mb-1">
+                <span class="font-label-sm text-label-sm text-pulsar-gold uppercase">Signal Detected</span>
+                <span class="text-xs text-stellar-gray">• 5 hours ago</span>
+              </div>
+              <h4 class="text-starlight-white font-bold">FRB 20240315 - Gravitational Wave Signature</h4>
+            </div>
+            <div class="hidden md:flex flex-col items-end gap-1">
+              <span class="text-label-sm font-label-sm text-pulsar-gold">SOURCE: LIGO</span>
+              <span class="text-xs text-stellar-gray uppercase tracking-widest">Interferometry</span>
+            </div>
+            <span class="material-symbols-outlined text-stellar-gray group-hover:text-starlight-white transition-colors">download</span>
+          </div>
+        </div>
+      </section>
+
+    </div>
+  </main>
+
+  <!-- ===== FOOTER ===== -->
+  <footer class="w-full py-16 bg-midnight-blue border-t border-starlight-white/5">
+    <div class="grid grid-cols-1 md:grid-cols-3 gap-gutter px-margin-desktop max-w-container-max mx-auto">
+      <div class="space-y-6">
+        <div class="font-headline-md text-headline-md text-starlight-white">Cosmos Explorer</div>
+        <p class="text-stellar-gray text-label-md font-label-md max-w-xs">© 2024 Cosmos Explorer. Advancing Human Understanding of the Universe.</p>
+      </div>
+      <div class="grid grid-cols-2 gap-8">
+        <div class="space-y-4">
+          <h5 class="text-pulsar-gold font-label-md text-label-md uppercase tracking-widest">Navigation</h5>
+          <ul class="space-y-2">
+            <li><a class="text-stellar-gray hover:text-nebula-purple transition-colors font-label-md text-label-md" href="perpustakaan.html">Resources</a></li>
+            <li><a class="text-stellar-gray hover:text-nebula-purple transition-colors font-label-md text-label-md" href="eksplorasi.html">Missions</a></li>
+            <li><a class="text-stellar-gray hover:text-nebula-purple transition-colors font-label-md text-label-md" href="daftar.html">Newsletter</a></li>
+          </ul>
+        </div>
+        <div class="space-y-4">
+          <h5 class="text-pulsar-gold font-label-md text-label-md uppercase tracking-widest">Legal</h5>
+          <ul class="space-y-2">
+            <li><a class="text-stellar-gray hover:text-nebula-purple transition-colors font-label-md text-label-md" href="profil.html">Privacy</a></li>
+            <li><a class="text-stellar-gray hover:text-nebula-purple transition-colors font-label-md text-label-md" href="profil.html">Contact</a></li>
+          </ul>
+        </div>
+      </div>
+      <div class="space-y-6">
+        <h5 class="text-pulsar-gold font-label-md text-label-md uppercase tracking-widest">Join the Newsletter</h5>
+        <div class="flex gap-2">
+          <input class="bg-white/5 border border-white/10 rounded-sm px-4 py-2 flex-grow outline-none focus:border-nebula-purple transition-colors text-label-md font-label-md" placeholder="Your orbital email" type="email"/>
+          <button class="bg-nebula-purple text-white px-4 py-2 hover:bg-nebula-purple/80 transition-colors">
+            <span class="material-symbols-outlined">send</span>
+          </button>
+        </div>
+        <div class="flex gap-4">
+          <a class="text-stellar-gray hover:text-pulsar-gold transition-colors" href="#"><span class="material-symbols-outlined">public</span></a>
+          <a class="text-stellar-gray hover:text-pulsar-gold transition-colors" href="#"><span class="material-symbols-outlined">forum</span></a>
+          <a class="text-stellar-gray hover:text-pulsar-gold transition-colors" href="#"><span class="material-symbols-outlined">satellite_alt</span></a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <!-- ===== SCRIPT CEK LOGIN ===== -->
+  <script>
+    // CEK LOGIN - UBAH TOMBOL JOIN NOW JADI DASHBOARD
+    const user = JSON.parse(localStorage.getItem('user'));
+    const joinBtn = document.getElementById('joinBtn');
+
+    if (user && user.login) {
+      joinBtn.innerHTML = '<button class="bg-pulsar-gold text-midnight-blue px-6 py-2 font-bold active:scale-95 transition-transform rounded-sm hover:opacity-90">Dashboard</button>';
+      joinBtn.href = 'profil.html';
+    }
+  </script>
+
+</body>
+</html>
