@@ -143,22 +143,19 @@
   <!-- ===== NAVBAR ===== -->
   <nav class="fixed top-0 w-full z-50 bg-surface/80 backdrop-blur-xl border-b border-starlight-white/10">
     <div class="flex justify-between items-center px-margin-desktop py-4 max-w-container-max mx-auto">
-      <a href="index.html" class="font-headline-md text-headline-md text-starlight-white tracking-tight">Cosmos Explorer</a>
+      <a href="index.html" class="font-headline-md text-headline-md text-starlight-white tracking-tight flex items-center gap-2">
+        <span class="material-symbols-outlined text-pulsar-gold">star</span>
+        Cosmos Explorer
+      </a>
       <div class="hidden md:flex items-center gap-8">
         <a class="text-stellar-gray hover:text-starlight-white transition-colors font-body-md text-body-md" href="eksplorasi.html">Explore</a>
         <a class="text-starlight-white font-bold border-b-2 border-pulsar-gold pb-1 font-body-md text-body-md" href="perpustakaan.html">Gallery</a>
         <a class="text-stellar-gray hover:text-starlight-white transition-colors font-body-md text-body-md" href="profil.html">Community</a>
         <a class="text-stellar-gray hover:text-starlight-white transition-colors font-body-md text-body-md" href="profil.html">Profile</a>
       </div>
-      <div class="flex items-center gap-6">
-        <div class="relative hidden lg:block">
-          <input class="bg-white/5 border-b border-white/20 focus:border-nebula-purple outline-none px-4 py-1 text-label-md font-label-md w-48 transition-all focus:w-64" placeholder="Cari..." type="text"/>
-          <span class="material-symbols-outlined absolute right-2 top-1 text-stellar-gray text-sm">search</span>
-        </div>
-        <a href="daftar.html" id="joinBtn">
-          <button class="bg-pulsar-gold text-midnight-blue px-6 py-2 font-bold active:scale-95 transition-transform rounded-sm hover:opacity-90">Join Now</button>
-        </a>
-      </div>
+      <a href="daftar.html" id="joinBtn">
+        <button class="bg-pulsar-gold text-void-black px-6 py-2 rounded-full font-bold active:scale-95 transition-transform">Join Now</button>
+      </a>
     </div>
   </nav>
 
@@ -415,7 +412,7 @@
     const joinBtn = document.getElementById('joinBtn');
 
     if (user && user.login) {
-      joinBtn.innerHTML = '<button class="bg-pulsar-gold text-midnight-blue px-6 py-2 font-bold active:scale-95 transition-transform rounded-sm hover:opacity-90">Dashboard</button>';
+      joinBtn.innerHTML = '<button class="bg-pulsar-gold text-void-black px-6 py-2 rounded-full font-bold active:scale-95 transition-transform">Dashboard</button>';
       joinBtn.href = 'profil.html';
     }
   </script>
