@@ -3,7 +3,7 @@
 <head>
   <meta charset="utf-8"/>
   <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
-  <title>Perpustakaan Galaksi | Cosmos Explorer</title>
+  <title>Space Library | Cosmos Explorer</title>
   <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
   <link href="https://fonts.googleapis.com/css2?family=Sora:wght@100..800&amp;family=Hanken+Grotesk:ital,wght@0,100..900;1,100..900&amp;family=JetBrains+Mono:ital,wght@0,100..800;1,100..800&amp;display=swap" rel="stylesheet"/>
   <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
@@ -12,130 +12,56 @@
       darkMode: "class",
       theme: {
         extend: {
-          "colors": {
-            "tertiary-fixed": "#ffe083",
-            "surface-tint": "#c0c6de",
-            "on-secondary-fixed": "#25005a",
-            "on-error-container": "#ffdad6",
-            "on-surface-variant": "#c6c6cd",
-            "surface-bright": "#363a3b",
-            "primary-fixed": "#dce1fb",
-            "surface-dim": "#101415",
-            "on-background": "#e0e3e5",
-            "on-primary-container": "#72778d",
-            "secondary": "#d2bbff",
-            "primary": "#c0c6de",
-            "secondary-fixed": "#eaddff",
-            "tertiary-fixed-dim": "#eec200",
-            "on-secondary-container": "#c9aeff",
-            "on-tertiary-fixed-variant": "#574500",
-            "on-primary-fixed-variant": "#40465a",
-            "surface-container-highest": "#323537",
-            "inverse-surface": "#e0e3e5",
-            "surface-container-lowest": "#0b0f10",
-            "pulsar-gold": "#FACC15",
-            "midnight-blue": "#0F172A",
-            "primary-fixed-dim": "#c0c6de",
-            "on-tertiary": "#3c2f00",
-            "on-surface": "#e0e3e5",
-            "on-secondary-fixed-variant": "#5a00c6",
-            "on-error": "#690005",
-            "background": "#101415",
-            "secondary-fixed-dim": "#d2bbff",
-            "on-tertiary-container": "#917500",
-            "surface-container-low": "#191c1e",
-            "surface-container": "#1d2022",
-            "on-primary-fixed": "#151b2d",
-            "inverse-primary": "#585e73",
-            "tertiary-container": "#0a0600",
-            "surface-variant": "#323537",
-            "surface": "#101415",
-            "on-secondary": "#3f008e",
-            "tertiary": "#eec200",
-            "error-container": "#93000a",
-            "starlight-white": "#F8FAFC",
-            "error": "#ffb4ab",
-            "on-tertiary-fixed": "#231b00",
-            "inverse-on-surface": "#2d3133",
-            "nebula-purple": "#7C3AED",
-            "surface-container-high": "#272a2c",
-            "outline": "#909097",
-            "void-black": "#020617",
-            "on-primary": "#2a3043",
-            "outline-variant": "#46464c",
-            "stellar-gray": "#94A3B8",
-            "secondary-container": "#6001d1",
-            "primary-container": "#020617"
+          colors: {
+            "tertiary-fixed": "#ffe083", "surface-tint": "#c0c6de", "on-secondary-fixed": "#25005a",
+            "on-error-container": "#ffdad6", "on-surface-variant": "#c6c6cd", "surface-bright": "#363a3b",
+            "primary-fixed": "#dce1fb", "surface-dim": "#101415", "on-background": "#e0e3e5",
+            "on-primary-container": "#72778d", "secondary": "#d2bbff", "primary": "#c0c6de",
+            "secondary-fixed": "#eaddff", "tertiary-fixed-dim": "#eec200", "on-secondary-container": "#c9aeff",
+            "on-tertiary-fixed-variant": "#574500", "on-primary-fixed-variant": "#40465a",
+            "surface-container-highest": "#323537", "inverse-surface": "#e0e3e5", "surface-container-lowest": "#0b0f10",
+            "pulsar-gold": "#FACC15", "midnight-blue": "#0F172A", "primary-fixed-dim": "#c0c6de",
+            "on-tertiary": "#3c2f00", "on-surface": "#e0e3e5", "on-secondary-fixed-variant": "#5a00c6",
+            "on-error": "#690005", "background": "#101415", "secondary-fixed-dim": "#d2bbff",
+            "on-tertiary-container": "#917500", "surface-container-low": "#191c1e", "surface-container": "#1d2022",
+            "on-primary-fixed": "#151b2d", "inverse-primary": "#585e73", "tertiary-container": "#0a0600",
+            "surface-variant": "#323537", "surface": "#101415", "on-secondary": "#3f008e", "tertiary": "#eec200",
+            "error-container": "#93000a", "starlight-white": "#F8FAFC", "error": "#ffb4ab",
+            "on-tertiary-fixed": "#231b00", "inverse-on-surface": "#2d3133", "nebula-purple": "#7C3AED",
+            "surface-container-high": "#272a2c", "outline": "#909097", "void-black": "#020617",
+            "on-primary": "#2a3043", "outline-variant": "#46464c", "stellar-gray": "#94A3B8",
+            "secondary-container": "#6001d1", "primary-container": "#020617"
           },
-          "borderRadius": {
-            "DEFAULT": "0.25rem",
-            "lg": "0.5rem",
-            "xl": "0.75rem",
-            "full": "9999px"
+          borderRadius: { DEFAULT: "0.25rem", lg: "0.5rem", xl: "0.75rem", full: "9999px" },
+          spacing: { "margin-mobile": "20px", gutter: "24px", unit: "8px", "margin-desktop": "64px", "container-max": "1280px" },
+          fontFamily: {
+            "label-sm": ["JetBrains Mono"], "headline-md": ["Sora"], "headline-lg-mobile": ["Sora"],
+            "body-lg": ["Hanken Grotesk"], "headline-lg": ["Sora"], "label-md": ["JetBrains Mono"],
+            "display-lg": ["Sora"], "body-md": ["Hanken Grotesk"]
           },
-          "spacing": {
-            "margin-mobile": "20px",
-            "gutter": "24px",
-            "unit": "8px",
-            "margin-desktop": "64px",
-            "container-max": "1280px"
-          },
-          "fontFamily": {
-            "label-sm": ["JetBrains Mono"],
-            "headline-md": ["Sora"],
-            "headline-lg-mobile": ["Sora"],
-            "body-lg": ["Hanken Grotesk"],
-            "headline-lg": ["Sora"],
-            "label-md": ["JetBrains Mono"],
-            "display-lg": ["Sora"],
-            "body-md": ["Hanken Grotesk"]
-          },
-          "fontSize": {
-            "label-sm": ["12px", {"lineHeight": "16px", "letterSpacing": "0.08em", "fontWeight": "500"}],
-            "headline-md": ["24px", {"lineHeight": "32px", "fontWeight": "600"}],
-            "headline-lg-mobile": ["32px", {"lineHeight": "40px", "fontWeight": "600"}],
-            "body-lg": ["18px", {"lineHeight": "28px", "fontWeight": "400"}],
-            "headline-lg": ["40px", {"lineHeight": "48px", "letterSpacing": "-0.01em", "fontWeight": "600"}],
-            "label-md": ["14px", {"lineHeight": "20px", "letterSpacing": "0.05em", "fontWeight": "500"}],
-            "display-lg": ["64px", {"lineHeight": "72px", "letterSpacing": "-0.02em", "fontWeight": "700"}],
-            "body-md": ["16px", {"lineHeight": "24px", "fontWeight": "400"}]
+          fontSize: {
+            "label-sm": ["12px", { lineHeight: "16px", letterSpacing: "0.08em", fontWeight: "500" }],
+            "headline-md": ["24px", { lineHeight: "32px", fontWeight: "600" }],
+            "headline-lg-mobile": ["32px", { lineHeight: "40px", fontWeight: "600" }],
+            "body-lg": ["18px", { lineHeight: "28px", fontWeight: "400" }],
+            "headline-lg": ["40px", { lineHeight: "48px", letterSpacing: "-0.01em", fontWeight: "600" }],
+            "label-md": ["14px", { lineHeight: "20px", letterSpacing: "0.05em", fontWeight: "500" }],
+            "display-lg": ["64px", { lineHeight: "72px", letterSpacing: "-0.02em", fontWeight: "700" }],
+            "body-md": ["16px", { lineHeight: "24px", fontWeight: "400" }]
           }
         }
       }
     }
   </script>
   <style>
-    body {
-      background-color: #020617;
-      color: #F8FAFC;
-      overflow-x: hidden;
-    }
-    .glass-panel {
-      background: rgba(15, 23, 42, 0.6);
-      backdrop-filter: blur(12px);
-      border: 1px solid rgba(248, 250, 252, 0.1);
-    }
-    .nebula-glow {
-      box-shadow: 0 0 20px rgba(124, 58, 237, 0.2);
-    }
-    .nebula-glow:hover {
-      box-shadow: 0 0 30px rgba(124, 58, 237, 0.4);
-      border-color: rgba(124, 58, 237, 0.5);
-    }
-    .custom-scrollbar::-webkit-scrollbar {
-      width: 4px;
-    }
-    .custom-scrollbar::-webkit-scrollbar-track {
-      background: transparent;
-    }
-    .custom-scrollbar::-webkit-scrollbar-thumb {
-      background: #7C3AED;
-      border-radius: 10px;
-    }
-    .material-symbols-outlined {
-      font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
-      vertical-align: middle;
-    }
+    body { background-color: #020617; color: #F8FAFC; overflow-x: hidden; }
+    .glass-panel { background: rgba(15, 23, 42, 0.6); backdrop-filter: blur(12px); border: 1px solid rgba(248, 250, 252, 0.1); }
+    .nebula-glow { box-shadow: 0 0 20px rgba(124, 58, 237, 0.2); }
+    .nebula-glow:hover { box-shadow: 0 0 30px rgba(124, 58, 237, 0.4); border-color: rgba(124, 58, 237, 0.5); }
+    .custom-scrollbar::-webkit-scrollbar { width: 4px; }
+    .custom-scrollbar::-webkit-scrollbar-track { background: transparent; }
+    .custom-scrollbar::-webkit-scrollbar-thumb { background: #7C3AED; border-radius: 10px; }
+    .material-symbols-outlined { font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24; vertical-align: middle; }
   </style>
 </head>
 <body class="font-body-md text-body-md selection:bg-nebula-purple/30 selection:text-pulsar-gold">
@@ -183,7 +109,6 @@
   <main class="md:ml-64 pt-24 pb-16 px-6 md:px-margin-desktop min-h-screen">
     <div class="max-w-container-max mx-auto space-y-16">
 
-      <!-- Featured Discovery Hero -->
       <section class="relative h-[450px] rounded-2xl overflow-hidden glass-panel group nebula-glow transition-all duration-700">
         <div class="absolute inset-0 bg-gradient-to-t from-midnight-blue via-midnight-blue/40 to-transparent"></div>
         <div class="absolute inset-0 bg-[url('placeholder')] bg-cover bg-center mix-blend-overlay opacity-60 transition-transform duration-[20s] group-hover:scale-110"></div>
@@ -201,64 +126,28 @@
         </div>
       </section>
 
-      <!-- Library Entries & Search -->
       <section class="space-y-8">
-        <div class="space-y-6 border-b border-white/10 pb-6">
-          <div class="flex flex-col md:flex-row md:items-end justify-between gap-6">
-            <div>
-              <h2 class="font-headline-lg text-headline-lg text-starlight-white mb-2">Digital Library</h2>
-              <p class="text-stellar-gray font-body-md">Browse 24,812 verified celestial entries.</p>
-            </div>
-            <div class="flex flex-wrap items-center gap-4">
-              <div class="relative">
-                <label class="block text-[10px] text-stellar-gray uppercase tracking-widest mb-1 ml-1">Sort By</label>
-                <select class="appearance-none bg-midnight-blue border border-white/10 px-4 py-2 pr-10 text-label-md font-label-md text-starlight-white rounded-lg focus:border-pulsar-gold outline-none">
-                  <option>Most Recent</option>
-                  <option>A-Z Alphabetical</option>
-                  <option>Distance: Near to Far</option>
-                </select>
-                <span class="material-symbols-outlined absolute right-3 top-8 text-stellar-gray pointer-events-none">expand_more</span>
-              </div>
-              <div class="relative">
-                <label class="block text-[10px] text-stellar-gray uppercase tracking-widest mb-1 ml-1">Instrument</label>
-                <select class="appearance-none bg-midnight-blue border border-white/10 px-4 py-2 pr-10 text-label-md font-label-md text-starlight-white rounded-lg focus:border-pulsar-gold outline-none">
-                  <option>All Instruments</option>
-                  <option>JWST</option>
-                  <option>Hubble</option>
-                  <option>Kepler</option>
-                  <option>Chandra</option>
-                </select>
-                <span class="material-symbols-outlined absolute right-3 top-8 text-stellar-gray pointer-events-none">expand_more</span>
-              </div>
-              <div class="relative">
-                <label class="block text-[10px] text-stellar-gray uppercase tracking-widest mb-1 ml-1">Distance Range</label>
-                <select class="appearance-none bg-midnight-blue border border-white/10 px-4 py-2 pr-10 text-label-md font-label-md text-starlight-white rounded-lg focus:border-pulsar-gold outline-none">
-                  <option>All Distances</option>
-                  <option>&lt; 1k LY</option>
-                  <option>1k - 1M LY</option>
-                  <option>Deep Space</option>
-                </select>
-                <span class="material-symbols-outlined absolute right-3 top-8 text-stellar-gray pointer-events-none">expand_more</span>
-              </div>
-              <div class="flex items-center gap-3 bg-white/5 border border-white/10 px-4 py-2 rounded-lg h-[42px] mt-5">
-                <span class="text-label-md font-label-md text-starlight-white">Verified Only</span>
-                <div class="w-8 h-4 bg-nebula-purple rounded-full relative cursor-pointer">
-                  <div class="absolute right-1 top-1 w-2 h-2 bg-white rounded-full"></div>
-                </div>
-              </div>
-            </div>
+        <div class="flex flex-col md:flex-row md:items-end justify-between gap-6 border-b border-white/10 pb-6">
+          <div>
+            <h2 class="font-headline-lg text-headline-lg text-starlight-white mb-2">Digital Library</h2>
+            <p class="text-stellar-gray font-body-md">Browse 24,812 verified celestial entries.</p>
           </div>
-          <div class="flex flex-wrap gap-2">
-            <span class="px-3 py-1 bg-nebula-purple/20 border border-nebula-purple/30 rounded-full text-xs font-label-md text-nebula-purple cursor-pointer hover:bg-nebula-purple/30 transition-colors">Verified Data</span>
-            <span class="px-3 py-1 bg-white/5 border border-white/10 rounded-full text-xs font-label-md text-stellar-gray cursor-pointer hover:text-starlight-white hover:border-white/20 transition-colors">Pro Access</span>
-            <span class="px-3 py-1 bg-white/5 border border-white/10 rounded-full text-xs font-label-md text-stellar-gray cursor-pointer hover:text-starlight-white hover:border-white/20 transition-colors">New Discoveries</span>
-            <span class="px-3 py-1 bg-white/5 border border-white/10 rounded-full text-xs font-label-md text-stellar-gray cursor-pointer hover:text-starlight-white hover:border-white/20 transition-colors">High Resolution</span>
+          <div class="flex items-center gap-4">
+            <div class="relative">
+              <select class="appearance-none bg-midnight-blue border border-white/10 px-4 py-2 pr-10 text-label-md font-label-md text-starlight-white rounded-lg focus:border-pulsar-gold outline-none">
+                <option>Most Recent</option>
+                <option>A-Z Alphabetical</option>
+                <option>Distance: Near to Far</option>
+              </select>
+              <span class="material-symbols-outlined absolute right-3 top-2.5 text-stellar-gray pointer-events-none">expand_more</span>
+            </div>
+            <button class="glass-panel p-2 rounded-lg text-stellar-gray hover:text-pulsar-gold transition-colors">
+              <span class="material-symbols-outlined">filter_list</span>
+            </button>
           </div>
         </div>
 
-        <!-- Info Cards Grid -->
         <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-          <!-- Card 1 -->
           <div class="group glass-panel rounded-xl overflow-hidden hover:scale-[1.02] transition-all duration-300 nebula-glow">
             <div class="h-48 overflow-hidden relative">
               <img class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCjwMmXVD0w8pMV6nNoZLUfEhCr4pY53WRqUHlH_6r1o66XB99itlVv5JdzlnXxz3-1S8ZLyR30eShWE9OZjik99KOVP1DYaeo4nDilbuY43UKDytPm-xZbHiCIDC46MjZ_0n3Qlervmb3Q9BFd2RROJg50dSVmz6q-ZgDuhMdOxOcqvO-jxqhxFUVjMw2ZAVokTMnuShCawKr9lxdpwFtN0Gteg4AaaQQBlcTv42o8P-wpKiL39_2r"/>
@@ -275,7 +164,6 @@
             </div>
           </div>
 
-          <!-- Card 2 -->
           <div class="group glass-panel rounded-xl overflow-hidden hover:scale-[1.02] transition-all duration-300 nebula-glow">
             <div class="h-48 overflow-hidden relative">
               <img class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAOK3kC9CBGOoD91bv29oM5tDmV-suO1xDQrXG5tW6uyTjypI-3rsArG9ZLOHgDBvo1_YTTfmmXFcyR1Yzh9HzGV98lTFu8u6lstHuqwDUdpvXErLR_SSg4-5OU4m6spTS9-b21v9zCMQnWcFnEKkCfwkd1txoZScbRZiR7dI0QIEF59X6vZ9GShnzR7wiNgLFMlY4fiYWo8fM0SE-M8LC7_xIAtUMSqtOqnmb0pBbhwd365Cg_oPUx"/>
@@ -292,7 +180,6 @@
             </div>
           </div>
 
-          <!-- Card 3 -->
           <div class="group glass-panel rounded-xl overflow-hidden hover:scale-[1.02] transition-all duration-300 nebula-glow">
             <div class="h-48 overflow-hidden relative">
               <img class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110" src="https://lh3.googleusercontent.com/aida-public/AB6AXuB94WtfsreTvr7tSM6_141YJHH4pKQFn_kFFLpER1gHysAM47JTAoOawxb63rLRX3zv3x5k19ni-WTGeAl8Cq_C6w0xAVp2i0TU2naapVjWIesBKZf02pYrFd-xbpW_Cj7nGYFKpWXF-zCZHnaRJt2wF_hfmRPsz51lgTKffGmv9-q8IihkSeWC7jZehdkvPlDgnHliYtPqSzEVjkukxoEaJrrz2_2mNi44TUBTigeQBj0mBkgoZW1m"/>
@@ -311,7 +198,6 @@
         </div>
       </section>
 
-      <!-- Recent Archives Section -->
       <section class="space-y-8 bg-surface-container-low/50 p-8 rounded-3xl border border-white/5">
         <div class="flex items-center justify-between">
           <h2 class="font-headline-md text-headline-md text-starlight-white flex items-center gap-3">
@@ -321,7 +207,6 @@
           <a class="text-label-md font-label-md text-stellar-gray hover:text-pulsar-gold transition-colors" href="#">View All Stream</a>
         </div>
         <div class="space-y-4">
-          <!-- Archive Item 1 -->
           <div class="flex items-center gap-6 p-4 glass-panel rounded-xl hover:bg-white/5 transition-all cursor-pointer group">
             <div class="w-16 h-16 rounded-lg overflow-hidden flex-shrink-0">
               <img class="w-full h-full object-cover" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAP-co4Hm0ga3A09Y37URHcQWOek6q-oLtBGj90b-qFoKTNuE5BpC-ZVVlnOqJ5qKLhxxqtTZhwBWgV6avFzi1LiCLTNzqKQugt8O37zOmo7LGXQ9cQvOanfPmKSWrLx4dxiPIgUw7C9D9sRzg9Lc21x6l582HYc25BU5TGg3Sms7Jqmb9c9XKafeCniqG2Oa_0mQzshQzv6LOkQCEbJTKIyqfprwsQCphsUxZOTM_Lapg2EuP8sJ6P"/>
@@ -340,7 +225,6 @@
             <span class="material-symbols-outlined text-stellar-gray group-hover:text-starlight-white transition-colors">download</span>
           </div>
 
-          <!-- Archive Item 2 -->
           <div class="flex items-center gap-6 p-4 glass-panel rounded-xl hover:bg-white/5 transition-all cursor-pointer group">
             <div class="w-16 h-16 rounded-lg overflow-hidden flex-shrink-0">
               <img class="w-full h-full object-cover" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDooaHcNlcHkyRE3SeP2GBG00lgrbc0urP_1N6mgAMNwEJGqJvZjTVZ7gh1IMfb35lH6QCFrvcHiKQtMoKWvQ6IcVdJ7eXE_zoDkOrP8P9Jsw5HhERZJACu3aP6RoMxnSwTj_cwd4j-8kQljYe4tr8Xm7ogq4YrE_h1UMO-ybGWS4dgwTmNwif8ZjuxmntIwXhuuiv5h3bJGWJMopfbUOdHTiWCZ_IwEgH---0DV3PaCV7m4urQ63pl"/>
@@ -407,7 +291,6 @@
 
   <!-- ===== SCRIPT CEK LOGIN ===== -->
   <script>
-    // CEK LOGIN - UBAH TOMBOL JOIN NOW JADI DASHBOARD
     const user = JSON.parse(localStorage.getItem('user'));
     const joinBtn = document.getElementById('joinBtn');
 
@@ -416,6 +299,5 @@
       joinBtn.href = 'profil.html';
     }
   </script>
-
 </body>
 </html>
