@@ -1,0 +1,301 @@
+<!DOCTYPE html>
+<html class="dark" lang="id">
+<head>
+  <meta charset="utf-8"/>
+  <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+  <title>Andromeda Galaxy | Cosmos Explorer</title>
+  <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+  <link href="https://fonts.googleapis.com/css2?family=Sora:wght@400;600;700&family=Hanken+Grotesk:wght@400;500;600&family=JetBrains+Mono:wght@500&family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap" rel="stylesheet"/>
+  <link href="https://fonts.googleapis.com/css2?family=Hanken+Grotesk:wght@100..900&family=JetBrains+Mono:wght@100..900&family=Sora:wght@100..900&display=swap" rel="stylesheet"/>
+  <style>
+    .material-symbols-outlined {
+      font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+    }
+    .glass-panel {
+      background: rgba(15, 23, 42, 0.6);
+      backdrop-filter: blur(12px);
+      border: 1px solid rgba(248, 250, 252, 0.1);
+    }
+    .nebula-glow:hover {
+      box-shadow: 0 0 20px rgba(124, 58, 237, 0.3);
+      border-color: rgba(124, 58, 237, 0.5);
+    }
+    .custom-scrollbar::-webkit-scrollbar { width: 4px; }
+    .custom-scrollbar::-webkit-scrollbar-track { background: rgba(2, 6, 23, 1); }
+    .custom-scrollbar::-webkit-scrollbar-thumb { background: #7C3AED; border-radius: 10px; }
+    @keyframes float { 0% { transform: translateY(0px); } 50% { transform: translateY(-10px); } 100% { transform: translateY(0px); } }
+    .animate-float { animation: float 6s ease-in-out infinite; }
+  </style>
+  <script id="tailwind-config">
+    tailwind.config = {
+      darkMode: "class",
+      theme: {
+        extend: {
+          colors: {
+            "surface-container-low": "#191c1e", "on-tertiary-fixed": "#231b00",
+            "surface-container": "#1d2022", "on-secondary-fixed-variant": "#5a00c6",
+            "on-background": "#e0e3e5", "primary": "#c0c6de", "inverse-primary": "#585e73",
+            "on-primary": "#2a3043", "primary-container": "#020617", "error": "#ffb4ab",
+            "secondary-fixed-dim": "#d2bbff", "on-surface": "#e0e3e5", "on-secondary": "#3f008e",
+            "on-tertiary": "#3c2f00", "tertiary-fixed-dim": "#eec200", "surface-container-lowest": "#0b0f10",
+            "midnight-blue": "#0F172A", "on-primary-fixed": "#151b2d", "on-primary-container": "#72778d",
+            "tertiary": "#eec200", "primary-fixed": "#dce1fb", "on-error": "#690005",
+            "on-primary-fixed-variant": "#40465a", "nebula-purple": "#7C3AED", "inverse-surface": "#e0e3e5",
+            "surface": "#101415", "on-secondary-fixed": "#25005a", "inverse-on-surface": "#2d3133",
+            "surface-container-highest": "#323537", "on-tertiary-container": "#917500",
+            "on-surface-variant": "#c6c6cd", "tertiary-container": "#0a0600", "surface-dim": "#101415",
+            "surface-bright": "#363a3b", "background": "#101415", "on-secondary-container": "#c9aeff",
+            "outline-variant": "#46464c", "void-black": "#020617", "surface-container-high": "#272a2c",
+            "stellar-gray": "#94A3B8", "secondary-fixed": "#eaddff", "surface-tint": "#c0c6de",
+            "starlight-white": "#F8FAFC", "secondary-container": "#6001d1", "pulsar-gold": "#FACC15",
+            "outline": "#909097", "surface-variant": "#323537", "tertiary-fixed": "#ffe083",
+            "error-container": "#93000a", "on-tertiary-fixed-variant": "#574500", "on-error-container": "#ffdad6",
+            "secondary": "#d2bbff", "primary-fixed-dim": "#c0c6de"
+          },
+          borderRadius: { DEFAULT: "0.25rem", lg: "0.5rem", xl: "0.75rem", full: "9999px" },
+          spacing: { "margin-mobile": "20px", unit: "8px", "container-max": "1280px", gutter: "24px", "margin-desktop": "64px" },
+          fontFamily: {
+            "headline-md": ["Sora"], "display-lg": ["Sora"], "body-lg": ["Hanken Grotesk"],
+            "body-md": ["Hanken Grotesk"], "headline-lg-mobile": ["Sora"], "label-sm": ["JetBrains Mono"],
+            "label-md": ["JetBrains Mono"], "headline-lg": ["Sora"]
+          },
+          fontSize: {
+            "headline-md": ["24px", { lineHeight: "32px", fontWeight: "600" }],
+            "display-lg": ["64px", { lineHeight: "72px", letterSpacing: "-0.02em", fontWeight: "700" }],
+            "body-lg": ["18px", { lineHeight: "28px", fontWeight: "400" }],
+            "body-md": ["16px", { lineHeight: "24px", fontWeight: "400" }],
+            "headline-lg-mobile": ["32px", { lineHeight: "40px", fontWeight: "600" }],
+            "label-sm": ["12px", { lineHeight: "16px", letterSpacing: "0.08em", fontWeight: "500" }],
+            "label-md": ["14px", { lineHeight: "20px", letterSpacing: "0.05em", fontWeight: "500" }],
+            "headline-lg": ["40px", { lineHeight: "48px", letterSpacing: "-0.01em", fontWeight: "600" }]
+          }
+        }
+      }
+    }
+  </script>
+</head>
+<body class="bg-background text-on-background selection:bg-pulsar-gold selection:text-void-black custom-scrollbar overflow-x-hidden">
+
+  <!-- ===== NAVBAR ===== -->
+  <nav class="fixed top-0 w-full z-50 bg-surface/80 backdrop-blur-xl border-b border-starlight-white/10">
+    <div class="flex justify-between items-center px-margin-desktop py-4 max-w-container-max mx-auto">
+      <a href="index.html" class="font-headline-md text-headline-md text-starlight-white tracking-tight flex items-center gap-2">
+        <span class="material-symbols-outlined text-pulsar-gold">star</span>
+        Cosmos Explorer
+      </a>
+      <div class="hidden md:flex items-center gap-8">
+        <a class="text-stellar-gray hover:text-starlight-white transition-colors font-body-md text-body-md" href="eksplorasi.html">Explore</a>
+        <a class="text-stellar-gray hover:text-starlight-white transition-colors font-body-md text-body-md" href="perpustakaan.html">Gallery</a>
+        <a class="text-stellar-gray hover:text-starlight-white transition-colors font-body-md text-body-md" href="profil.html">Community</a>
+        <a class="text-stellar-gray hover:text-starlight-white transition-colors font-body-md text-body-md" href="profil.html">Profile</a>
+      </div>
+      <a href="daftar.html" id="joinBtn">
+        <button class="bg-pulsar-gold text-void-black px-6 py-2 rounded-full font-bold active:scale-95 transition-transform">Join Now</button>
+      </a>
+    </div>
+  </nav>
+
+  <!-- ===== MAIN CONTENT ===== -->
+  <main class="pt-20">
+    <section class="relative h-[870px] w-full overflow-hidden flex items-end pb-24">
+      <div class="absolute inset-0 z-0">
+        <img class="w-full h-full object-cover" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBAUEs16BRSIZLgBxOqQLh62YK4raGrZq3E-25srpr8MZ3zDzOmXEYJaL28BSiG6TbK7BZKIMfLMvtBXdPim7KYPSjwlINOARJfAM354jcV5RJQYaml571602gZ9k4rM8u7Xw2Q-HBNv0MMvGg_NF4Lz9YClkeFRuo8_ovAbhZlPIlWLSEGAXQo6BaQE9DFo9m0mQu15vkoLEK_X5CSJVhRJKK6YQr2YfqGqd8bkoSfDCZMQvMMY6Hs"/>
+        <div class="absolute inset-0 bg-gradient-to-t from-background via-background/20 to-transparent"></div>
+        <div class="absolute inset-0 bg-gradient-to-r from-background via-transparent to-transparent"></div>
+      </div>
+      <div class="relative z-10 px-margin-desktop w-full max-w-container-max mx-auto">
+        <div class="inline-flex items-center gap-2 px-3 py-1 glass-panel rounded-full mb-6">
+          <span class="w-2 h-2 rounded-full bg-pulsar-gold animate-pulse"></span>
+          <span class="font-label-sm text-label-sm text-pulsar-gold uppercase">Messier 31 (M31)</span>
+        </div>
+        <h1 class="font-display-lg text-display-lg text-starlight-white max-w-3xl mb-4">The Andromeda Galaxy</h1>
+        <p class="font-body-lg text-body-lg text-stellar-gray max-w-2xl">A majestic spiral galaxy located approximately 2.5 million light-years from Earth and the nearest large galaxy to our own Milky Way.</p>
+      </div>
+    </section>
+
+    <section class="px-margin-desktop max-w-container-max mx-auto -mt-16 relative z-20 pb-32">
+      <div class="grid grid-cols-1 lg:grid-cols-12 gap-gutter">
+        <div class="lg:col-span-8 space-y-12">
+          <div class="grid grid-cols-2 md:grid-cols-4 gap-4">
+            <div class="glass-panel p-6 rounded-xl hover:bg-white/5 transition-all">
+              <p class="font-label-sm text-label-sm text-stellar-gray uppercase mb-1">Mass</p>
+              <p class="font-headline-md text-headline-md text-pulsar-gold">1.235 × 10¹² <span class="text-sm">M☉</span></p>
+            </div>
+            <div class="glass-panel p-6 rounded-xl hover:bg-white/5 transition-all">
+              <p class="font-label-sm text-label-sm text-stellar-gray uppercase mb-1">Diameter</p>
+              <p class="font-headline-md text-headline-md text-pulsar-gold">220,000 <span class="text-sm">LY</span></p>
+            </div>
+            <div class="glass-panel p-6 rounded-xl hover:bg-white/5 transition-all">
+              <p class="font-label-sm text-label-sm text-stellar-gray uppercase mb-1">Distance</p>
+              <p class="font-headline-md text-headline-md text-pulsar-gold">2.537 <span class="text-sm">MLY</span></p>
+            </div>
+            <div class="glass-panel p-6 rounded-xl hover:bg-white/5 transition-all">
+              <p class="font-label-sm text-label-sm text-stellar-gray uppercase mb-1">Magnitude</p>
+              <p class="font-headline-md text-headline-md text-pulsar-gold">3.44 <span class="text-sm">V</span></p>
+            </div>
+          </div>
+
+          <div class="glass-panel p-10 rounded-2xl border-l-4 border-l-nebula-purple">
+            <h2 class="font-headline-lg text-headline-lg text-starlight-white mb-6">Scientific Overview</h2>
+            <div class="font-body-md text-body-md text-stellar-gray space-y-4 leading-relaxed">
+              <p>The Andromeda Galaxy, also known as Messier 31, M31, or NGC 224 and originally the Andromeda Nebula, is a barred spiral galaxy approximately 2.5 million light-years from Earth and the nearest large galaxy to the Milky Way.</p>
+              <p>The galaxy's name stems from the area of Earth's sky in which it appears, the constellation of Andromeda, which itself is named after the Ethiopian princess who was the wife of Perseus in Greek mythology. The virial mass of the Andromeda Galaxy is of the same order of magnitude as that of the Milky Way, at 1 trillion solar masses (2.0×10⁴² kilograms).</p>
+              <p>Current estimates of the Andromeda Galaxy's diameter indicate it spans roughly 220,000 light-years, making it the largest member of the Local Group. It contains approximately one trillion stars, at least twice the number estimated for the Milky Way.</p>
+            </div>
+            <button class="mt-8 flex items-center gap-2 font-label-md text-label-md text-pulsar-gold hover:text-white transition-colors">DOWNLOAD RESEARCH PAPER <span class="material-symbols-outlined text-sm">download</span></button>
+          </div>
+
+          <div class="space-y-6">
+            <div class="flex justify-between items-end">
+              <h2 class="font-headline-md text-headline-md text-starlight-white">Interactive Observation Gallery</h2>
+              <div class="flex gap-2"><span class="w-8 h-1 bg-nebula-purple rounded-full"></span><span class="w-8 h-1 bg-white/10 rounded-full"></span><span class="w-8 h-1 bg-white/10 rounded-full"></span></div>
+            </div>
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+              <div class="group cursor-pointer overflow-hidden rounded-xl glass-panel nebula-glow">
+                <div class="aspect-video relative">
+                  <img class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBxh8j-0FnNBXf43mVOgmlAh7xI7K8LT2YUYgmU93i1IRsiOLwRaMVYmfG6QumD76Tw7nULLup1eM_efdAhcg0HLTeGT3o9UtXx0mbrNDsntfFrxpaCe5bZWxIljrZuIwOokOlaRWmZsVr-i2SF54m3TfBei2NUXr1JXgic51735JfJTc9F7JxILvIltI4SwsQen6IvNjKBm6vKU0lrbBKZVFajQx2p7PnAg0SZThQ6wUDQ9dmi-eto"/>
+                  <div class="absolute inset-0 bg-black/40 group-hover:bg-transparent transition-colors"></div>
+                  <div class="absolute bottom-4 left-4"><p class="font-label-md text-label-md text-starlight-white">Infrared Spectrum</p></div>
+                </div>
+              </div>
+              <div class="group cursor-pointer overflow-hidden rounded-xl glass-panel nebula-glow">
+                <div class="aspect-video relative">
+                  <img class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700" src="https://lh3.googleusercontent.com/aida-public/AB6AXuABkictOs2z7C3AyG1Ofz6GxW6GdC3ou-1-mgwF5I3jwN0aMcRc6fu3hQ4YjWj2gmYiOiVUQVMU1pa-FMuq-rUjydZd7jISL1TemgdG4Al83IsioaWs8g8RsIVHRNc8g9nGo1mcUcfcg_ws_kcItJrSRHO4MMsg2reNht5x2uWTQpeVjE64BeIbp8jMfNTeC15IODvjzeTbgFjzQZ8CuZP7pGyU3z9Mic2V9HJRRYxVQlxDqdp3QBLh"/>
+                  <div class="absolute inset-0 bg-black/40 group-hover:bg-transparent transition-colors"></div>
+                  <div class="absolute bottom-4 left-4"><p class="font-label-md text-label-md text-starlight-white">X-ray Emissions</p></div>
+                </div>
+              </div>
+              <div class="group cursor-pointer overflow-hidden rounded-xl glass-panel nebula-glow">
+                <div class="aspect-video relative">
+                  <img class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700" src="https://lh3.googleusercontent.com/aida-public/AB6AXuB3OQ61Q9eYluz-m_LkOAXrXD-dFen9Zrj7dIy1jwilvxFDoRsMlSRoLgPw6kgHh3kCtFfIvB-OKZIuJk6tPBYa-eXCutiA_X8hjC4kBxEYv56wkg-quv24jCIO3ZdNP1ydIdB6DHaSvnLNqIs1wZEYdXoKxqEkggDCr9UM_50xgwcyzWpB0mGi_pSEd9L6hyxjMUCNw1ZAM2D-TsZFfpeujOrS3ih-5QmL3iHpQgNoytY41BFWSS0G"/>
+                  <div class="absolute inset-0 bg-black/40 group-hover:bg-transparent transition-colors"></div>
+                  <div class="absolute bottom-4 left-4"><p class="font-label-md text-label-md text-starlight-white">Visible Light</p></div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <aside class="lg:col-span-4 space-y-8">
+          <div class="glass-panel p-8 rounded-2xl sticky top-28">
+            <h3 class="font-headline-md text-headline-md text-starlight-white mb-6">Related Discoveries</h3>
+            <div class="space-y-6">
+              <div class="flex gap-4 group cursor-pointer">
+                <div class="w-20 h-20 shrink-0 rounded-lg overflow-hidden border border-white/10">
+                  <img class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500" src="https://lh3.googleusercontent.com/aida-public/AB6AXuC-MWxGTCg0ek9qI_4kuM33q72Zz3ywGV0_GAhfd9lwWqPyGZW_8OKNwVUCTSstBVyqjIw0fsZ-avq3FyLrAOlIgZ70MiNWhEjpdk6MHmw-0JFHGAkGAndJgJMDuuZ7Llq7dKc_U5loGBzJXJ-ydk8FdOh2tVyOWB3IU1I5aHmz_PvAUM5yTEqSAo0R0Arr_v2YNqwckT3tkzTMNS9X1mU5EqWuy_T3tCHfSABlILbbWt0-KHUQjM3S"/>
+                </div>
+                <div>
+                  <p class="font-label-sm text-label-sm text-pulsar-gold uppercase mb-1">Galaxy</p>
+                  <h4 class="font-body-md text-body-md text-starlight-white font-semibold group-hover:text-pulsar-gold transition-colors">Triangulum Galaxy (M33)</h4>
+                  <p class="text-xs text-stellar-gray mt-1">Third-largest member of the Local Group.</p>
+                </div>
+              </div>
+              <hr class="border-white/5"/>
+              <div class="flex gap-4 group cursor-pointer">
+                <div class="w-20 h-20 shrink-0 rounded-lg overflow-hidden border border-white/10">
+                  <img class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCFQR5g96vBpNEIHb9rx3Eq-k8MzHqRse6UgKIRoKfsG9r4zHYSTxLMY-vHL5EPG88JBx6HMhm8EzNTqIybNO5qiwZAV68-gNTikJCUYnmDV92Yk2ZAvTimFgY3whZNp9vuka-fpbViQpqKZiBsq3ixUeUZJ4BWR1GRrRImqTsYDQtqav2dollD8iKYvb3WgHDUJv1xLW9bn-DaqH_Q2Hbo-76CjvK-DTV3Aq1ZkYTMEijbZYrZ5muo"/>
+                </div>
+                <div>
+                  <p class="font-label-sm text-label-sm text-pulsar-gold uppercase mb-1">Cluster</p>
+                  <h4 class="font-body-md text-body-md text-starlight-white font-semibold group-hover:text-pulsar-gold transition-colors">Mayall II (G1)</h4>
+                  <p class="text-xs text-stellar-gray mt-1">The largest globular cluster in M31.</p>
+                </div>
+              </div>
+              <hr class="border-white/5"/>
+              <div class="flex gap-4 group cursor-pointer">
+                <div class="w-20 h-20 shrink-0 rounded-lg overflow-hidden border border-white/10">
+                  <img class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCnqald2-Zx4_BYd2xatmZ-7IQ5UTGbsK1ad9StN0zTcFIxasBNH0nBNgEw4YFYFI8q20y-m6L4RN2JYRFVTR-T4rG72brKfCR1j1GlZEIqfK3AnHPlFO_PVfgXP4NO3bx22hnUbeLPWDXOF0KaLJSAEcDYEhm311eUhA84ywqPDtQk90LThxXmU6mWqMTPlAKPSh_yToqUoQAsjemUbcBkFsGBNpqtR7wCI2M-J76v26wIUWxLgfXQ"/>
+                </div>
+                <div>
+                  <p class="font-label-sm text-label-sm text-pulsar-gold uppercase mb-1">Star System</p>
+                  <h4 class="font-body-md text-body-md text-starlight-white font-semibold group-hover:text-pulsar-gold transition-colors">Var 1 in M31</h4>
+                  <p class="text-xs text-stellar-gray mt-1">Crucial variable star for distance measurement.</p>
+                </div>
+              </div>
+            </div>
+            <div class="mt-10 p-6 rounded-xl bg-nebula-purple/10 border border-nebula-purple/30 text-center">
+              <p class="font-label-sm text-label-sm text-nebula-purple uppercase mb-2">Observation Alert</p>
+              <p class="font-body-md text-body-md text-starlight-white mb-4">Milky Way-Andromeda collision predicted in 4.5 billion years.</p>
+              <button class="w-full py-3 bg-nebula-purple text-white rounded-lg font-label-md text-label-md hover:bg-nebula-purple/80 transition-colors active:scale-95">VIEW COLLISION SIMULATION</button>
+            </div>
+          </div>
+        </aside>
+      </div>
+    </section>
+  </main>
+
+  <!-- ===== FOOTER ===== -->
+  <footer class="bg-midnight-blue w-full py-16 border-t border-starlight-white/5">
+    <div class="grid grid-cols-1 md:grid-cols-3 gap-gutter px-margin-desktop max-w-container-max mx-auto">
+      <div class="space-y-4">
+        <span class="font-headline-md text-headline-md text-starlight-white">Cosmos Explorer</span>
+        <p class="font-label-md text-label-md text-stellar-gray leading-relaxed">© 2024 Cosmos Explorer. Advancing Human Understanding of the Universe. Our mission is to bridge the gap between complex astrophysics and curious minds.</p>
+        <div class="flex gap-4 pt-4">
+          <a class="w-10 h-10 rounded-full glass-panel flex items-center justify-center text-stellar-gray hover:text-pulsar-gold transition-colors" href="#"><span class="material-symbols-outlined">public</span></a>
+          <a class="w-10 h-10 rounded-full glass-panel flex items-center justify-center text-stellar-gray hover:text-pulsar-gold transition-colors" href="#"><span class="material-symbols-outlined">share</span></a>
+          <a class="w-10 h-10 rounded-full glass-panel flex items-center justify-center text-stellar-gray hover:text-pulsar-gold transition-colors" href="#"><span class="material-symbols-outlined">mail</span></a>
+        </div>
+      </div>
+      <div class="grid grid-cols-2 gap-8 md:justify-items-center">
+        <div class="space-y-4">
+          <p class="font-label-md text-label-md text-pulsar-gold uppercase tracking-widest">Resources</p>
+          <ul class="space-y-2">
+            <li><a class="font-label-md text-label-md text-stellar-gray hover:text-nebula-purple transition-colors" href="perpustakaan.html">Documentation</a></li>
+            <li><a class="font-label-md text-label-md text-stellar-gray hover:text-nebula-purple transition-colors" href="perpustakaan.html">API Access</a></li>
+            <li><a class="font-label-md text-label-md text-stellar-gray hover:text-nebula-purple transition-colors" href="eksplorasi.html">Missions</a></li>
+            <li><a class="font-label-md text-label-md text-stellar-gray hover:text-nebula-purple transition-colors" href="daftar.html">Newsletter</a></li>
+          </ul>
+        </div>
+        <div class="space-y-4">
+          <p class="font-label-md text-label-md text-pulsar-gold uppercase tracking-widest">Legal</p>
+          <ul class="space-y-2">
+            <li><a class="font-label-md text-label-md text-stellar-gray hover:text-nebula-purple transition-colors" href="profil.html">Privacy</a></li>
+            <li><a class="font-label-md text-label-md text-stellar-gray hover:text-nebula-purple transition-colors" href="profil.html">Contact</a></li>
+            <li><a class="font-label-md text-label-md text-stellar-gray hover:text-nebula-purple transition-colors" href="profil.html">Terms of Use</a></li>
+          </ul>
+        </div>
+      </div>
+      <div class="space-y-6">
+        <p class="font-label-md text-label-md text-pulsar-gold uppercase tracking-widest">Stay Updated</p>
+        <p class="font-body-md text-body-md text-stellar-gray">Subscribe to our galactic newsletter for the latest deep space discoveries.</p>
+        <div class="relative">
+          <input class="w-full bg-white/5 border border-white/10 rounded-lg px-4 py-3 text-starlight-white focus:ring-1 focus:ring-nebula-purple outline-none transition-all" placeholder="Email Address" type="email"/>
+          <button class="absolute right-2 top-1/2 -translate-y-1/2 bg-nebula-purple text-white px-4 py-1.5 rounded-md text-label-md font-label-md hover:bg-nebula-purple/80 transition-colors">JOIN</button>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <!-- ===== SCRIPT CEK LOGIN ===== -->
+  <script>
+    const user = JSON.parse(localStorage.getItem('user'));
+    const joinBtn = document.getElementById('joinBtn');
+
+    if (user && user.login) {
+      joinBtn.innerHTML = '<button class="bg-pulsar-gold text-void-black px-6 py-2 rounded-full font-bold active:scale-95 transition-transform">Dashboard</button>';
+      joinBtn.href = 'profil.html';
+    }
+
+    // Parallax effect
+    window.addEventListener('scroll', () => {
+      const scrolled = window.pageYOffset;
+      const heroImage = document.querySelector('section img');
+      if(heroImage) {
+        heroImage.style.transform = `translateY(${scrolled * 0.4}px) scale(${1 + scrolled * 0.0002})`;
+      }
+    });
+
+    // Gallery zoom effect
+    document.querySelectorAll('.group').forEach(card => {
+      card.addEventListener('mouseenter', () => {
+        const img = card.querySelector('img');
+        if(img) img.style.transform = 'scale(1.15)';
+      });
+      card.addEventListener('mouseleave', () => {
+        const img = card.querySelector('img');
+        if(img) img.style.transform = 'scale(1)';
+      });
+    });
+  </script>
+</body>
+</html>
